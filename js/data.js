@@ -51,28 +51,6 @@ const PRODUCTS = {
         ]
       },
       {
-        kind: 'twocol',
-        title: 'Ideas y hallazgos',
-        kicker: 'Detalle técnico',
-        left: {
-          title: 'Ideas planteadas',
-          sub: 'Para reprocesar los nibs',
-          items: [
-            { text: 'Limpieza programada en Bühler', status: 'Idea aprobada · ejecución 26-02-2026' },
-            { text: 'Incorporar la caída a la descascarilladora', status: 'Alternativa evaluada, sin fecha de ejecución' }
-          ]
-        },
-        right: {
-          title: 'Condiciones del muestreo',
-          sub: 'Precio y proyección',
-          items: [
-            { text: 'Precio de referencia del kg de nibs', status: '$9.00 durante el muestreo de febrero' },
-            { text: 'Monto recuperado en los 2 turnos', status: '$810 + $711 = $1,521' },
-            { text: 'Segundo bloque (28 feb – 01 mar)', status: 'T1: 25 y 35 kg · T2: 48 y 43 kg' }
-          ]
-        }
-      },
-      {
         kind: 'table',
         title: 'Registro de muestreo',
         kicker: 'Historial',
@@ -87,45 +65,13 @@ const PRODUCTS = {
         totals: ['7 días', '—', '—', '736 kg', 'Merma total obtenida']
       },
       {
-        kind: 'triad',
-        title: 'Impacto en el proceso',
-        kicker: 'Evaluación',
-        sub: 'La merma generada en la despedradora contiene un volumen significativo de nibs recuperables, con alto impacto económico anual.',
-        cols: [
-          {
-            title: 'Eficiencia productiva',
-            items: [
-              'Recuperación de nibs que antes se gestionaban como pérdida.',
-              'Incremento del rendimiento global sin modificar capacidad instalada.',
-              'Mejor aprovechamiento de la materia prima procesada.'
-            ]
-          },
-          {
-            title: 'Operación continua',
-            items: [
-              'La recuperación se realiza dentro del flujo operativo normal.',
-              'No genera paradas de línea ni afecta la productividad.',
-              'Uso controlado de recursos sin equipos adicionales complejos.'
-            ]
-          },
-          {
-            title: 'Calidad e inocuidad',
-            items: [
-              'Los nibs provienen de una etapa crítica de separación.',
-              'Se mantiene la trazabilidad y segregación del material.',
-              'Pasa por etapa posterior de reducción de carga microbiológica.'
-            ]
-          }
-        ]
-      },
-      {
         kind: 'conclusion',
         tag: 'Conclusión',
-        text: 'El piloto de laboratorio confirma que la merma del tamizador de licor es recuperable: 30% de pasta de cacao, con 35% de grasa y baja acidez (1.69%). El proyecto queda a la espera de la entrega del derretidor y del traslado de la concha de piedra para pasar de piloto a operación en planta.',
+        text: 'La recuperación de nibs en la despedradora es técnicamente viable y económicamente rentable, con un impacto anual superior a los $42 mil.',
         chips: [
-          { lbl: 'Merma promedio', val: '200 kg/día' },
-          { lbl: 'Recuperación piloto', val: '30%' },
-          { lbl: 'Proyección anual (real)', val: '$23,506' }
+          { lbl: 'Merma evaluada', val: '736 kg / 7 días' },
+          { lbl: 'Recuperación proyectada', val: '8,832 kg/año' },
+          { lbl: 'Impacto anual', val: '$42,393.6' }
         ]
       }
     ]
@@ -135,79 +81,94 @@ const PRODUCTS = {
     key: 'tostador',
     accent: '#F9A825',
     tag: 'Etapa 02 · Tostador',
-    name: 'Reducción merma NIBS',
+    name: 'Limpieza de tostador',
     tile: {
       num: '02',
-      title: 'Reducción merma NIBS',
-      desc: 'Acopio semanal de merma de limpieza del tostador. Recuperación en Bühler con 9 ciclos evaluados y propuestas de mejora.',
-      stat1: { val: '46.3%', lbl: 'Recuperación global' },
-      stat2: { val: '$100.8K', lbl: 'Proyección anual' }
+      title: 'Limpieza de tostador',
+      desc: 'Acopio de 6 días de merma de limpieza del tostador. 474 kg de nibs recuperados a $8.7/kg. Proyección anual $49,485.6.',
+      stat1: { val: '474 kg', lbl: 'Nibs / 6 días' },
+      stat2: { val: '$49.5K', lbl: 'Proyección 12 meses' }
     },
     slides: [
       {
         kind: 'hero',
         kicker: 'Punto de recuperación',
-        title: 'Reducción merma NIBS',
-        sub: 'Evaluación de la merma generada durante la limpieza del tostador. Se cuantifica el impacto económico y se proponen mejoras al método actual (Bühler).',
+        title: 'Limpieza de tostador',
+        sub: 'Registro de 6 días de juntado de merma de limpieza del tostador. Se recuperaron 474 kg de nibs a partir de 896.8 kg de merma (53% de recuperación), valorizados a $8.7 por kilogramo.',
         chips: [
           { txt: 'Limpieza de tostador' },
-          { txt: 'Nov 2025 – May 2026' },
-          { txt: '9 ciclos evaluados' }
+          { txt: '6 días de juntado' },
+          { txt: 'Precio $8.7 / kg' }
         ]
       },
       {
         kind: 'kpis',
-        title: 'Resumen del proyecto',
+        title: 'Resumen del periodo (6 días)',
         kicker: 'Cifras clave',
         imageKey: 'tostador',
-        imageCaption: 'Ciclos de recuperación — Reducción merma NIBS',
+        imageCaption: 'Registro — Limpieza de tostador (6 días)',
         items: [
-          { label: 'Ciclos de recuperación', val: 9, unit: '', foot: 'Desde nov 2025 hasta may 2026' },
-          { label: 'Merma total procesada', val: 9396, unit: 'kg', foot: 'Suma de los 9 ciclos registrados' },
-          { label: 'Nibs recuperados (global)', val: 4345.5, unit: 'kg', foot: 'Eficiencia global 46.3%' },
-          { label: 'Proyección anual', val: 100800, prefix: '$', unit: '', foot: 'Con base en el ciclo de mayo 2026' }
+          { label: 'Merma acumulada (6 días)', val: 896.8, unit: 'kg', foot: 'Total de merma juntada en el periodo' },
+          { label: 'Nibs recuperados', val: 474, unit: 'kg', foot: 'Eficiencia de recuperación: 53%' },
+          { label: 'Monto del periodo', val: 4123.8, prefix: '$', unit: '', foot: '474 kg × $8.7 / kg' },
+          { label: 'Proyección 12 meses', val: 49485.6, prefix: '$', unit: '', foot: 'Monto 6 días × 12 meses' }
         ]
       },
       {
         kind: 'chart',
-        title: 'Evolución de recuperación por ciclo',
-        kicker: 'Historial',
-        sub: 'Kilogramos de merma vs. nibs recuperados y % de recuperación en cada ciclo.',
-        chartType: 'combo',
-        labels: ['07-10 nov', '16 nov', '23 nov', '29 nov', '10 dic', '18 dic', '29 dic', '27 feb', '04 may'],
+        title: 'Merma vs. nibs recuperados',
+        kicker: 'Comparativo del periodo',
+        sub: 'Kilogramos de merma procesada y nibs recuperados en los 6 días de juntado.',
+        chartType: 'bar',
+        labels: ['Merma (kg)', 'Nibs recuperados (kg)'],
         datasets: [
-          { label: 'Merma (kg)', data: [622.5, 480.3, 611.8, 576.8, 1206.7, 896.8, 894.9, 1026.6, 3080], color: '#BDBDBD', type: 'bar' },
-          { label: 'Nibs recuperados (kg)', data: [75.9, 170.2, 251.5, 168.5, 443.6, 474, 405.8, 606, 1750], color: '#00897B', type: 'bar' },
-          { label: '% Recuperación', data: [12.2, 35.4, 41.1, 29.2, 36.7, 52.9, 45.3, 59.0, 56.8], color: '#F9A825', type: 'line' }
+          { label: 'Kg', data: [896.8, 474], color: '#F9A825' }
         ]
       },
       {
         kind: 'table',
-        title: 'Registro de ciclos de recuperación',
-        kicker: 'Detalle',
-        sub: 'Datos de cada ciclo de limpieza y recuperación en Bühler.',
-        headers: ['Fecha', 'Merma (kg)', 'Nibs (kg)', '% Recup.', 'Precio $/kg', 'Monto $', 'Operarios'],
+        title: 'Detalle del periodo y proyección',
+        kicker: 'Valorización',
+        sub: 'Resultado de 6 días de juntado y proyección a 12 meses a $8.7 por kg.',
+        headers: ['Concepto', 'Días', 'Merma (kg)', 'Nibs (kg)', '%', 'Precio $/kg', 'Monto $'],
         rows: [
-          ['07-10 nov 2025', '622.5', '75.9', '12.2%', '14', '1,062.6', '2'],
-          ['16 nov 2025', '480.3', '170.2', '35.4%', '14', '2,382.8', '2'],
-          ['23 nov 2025', '611.8', '251.5', '41.1%', '14', '3,521.0', '2'],
-          ['29 nov 2025', '576.8', '168.5', '29.2%', '14', '2,359.0', '2'],
-          ['10 dic 2025', '1,206.7', '443.6', '36.7%', '14', '6,210.4', '2'],
-          ['18 dic 2025', '896.8', '474.0', '52.9%', '14', '6,636.0', '2'],
-          ['29 dic 2025', '894.9', '405.8', '45.3%', '14', '5,681.2', '2'],
-          ['27 feb 2026', '1,026.6', '606.0', '59.0%', '9', '5,454.0', '2'],
-          ['04 may 2026', '3,080.0', '1,750.0', '56.8%', '4.8', '8,400.0', '2']
+          ['6 días de juntar — Limpieza de tostador', '6', '896.8', '474', '53%', '8.7', '4,123.8']
         ],
-        totals: ['9 ciclos', '9,396.4', '4,345.5', '46.3%', '—', '41,707', '—']
+        totals: ['Proyección 12 meses', '—', '—', '—', '—', '8.7', '49,485.6']
+      },
+      {
+        kind: 'twocol',
+        title: 'Análisis del resultado',
+        kicker: 'Detalle técnico',
+        left: {
+          title: 'Resultado del periodo',
+          sub: '6 días de juntado',
+          items: [
+            { text: 'Merma total juntada', status: '896.8 kg' },
+            { text: 'Nibs recuperados', status: '474 kg (53%)' },
+            { text: 'Precio de referencia', status: '$8.7 / kg' },
+            { text: 'Monto recuperado (6 días)', status: '$4,123.8' }
+          ]
+        },
+        right: {
+          title: 'Proyección anual',
+          sub: 'Base: resultado de 6 días × 12',
+          items: [
+            { text: 'Factor de proyección', status: '× 12 meses' },
+            { text: 'Proyección de valor anual', status: '$49,485.6' },
+            { text: 'Base de cálculo', status: '474 kg × $8.7 × 12' },
+            { text: 'Oportunidad identificada', status: 'Recuperación continua de merma de limpieza' }
+          ]
+        }
       },
       {
         kind: 'conclusion',
         tag: 'Conclusión',
-        text: 'La recuperación de la merma de limpieza del tostador es una oportunidad significativa. Integrar el proceso a la descascarilladora maximizaría el beneficio económico y la eficiencia global de la planta.',
+        text: 'En 6 días de juntado de merma de limpieza de tostador se recuperaron 474 kg de nibs (53% de 896.8 kg de merma), por un monto de $4,123.8 a $8.7/kg. La proyección a 12 meses asciende a $49,485.6.',
         chips: [
-          { lbl: 'Ciclos evaluados', val: '9' },
-          { lbl: 'Recuperación global', val: '46.3%' },
-          { lbl: 'Proyección anual', val: '$100,800' }
+          { lbl: 'Nibs (6 días)', val: '474 kg' },
+          { lbl: 'Monto periodo', val: '$4,123.8' },
+          { lbl: 'Proyección 12 meses', val: '$49,485.6' }
         ]
       }
     ]
@@ -340,43 +301,123 @@ const PRODUCTS = {
     tile: {
       num: '05',
       title: 'Polvillo de cocoa',
-      desc: 'Recuperación de merma de cocoa y torta trozada en proceso alcalino. Valorizado a $8.00 por kg.',
+      desc: 'Recuperación de merma de cocoa y torta trozada en proceso alcalino tipo 2. 425 kg ya recuperados · 4,300 kg pendientes.',
       stat1: { val: '425 kg', lbl: 'Ya recuperado' },
       stat2: { val: '4,300 kg', lbl: 'Pendiente' }
     },
     slides: [
       {
         kind: 'hero',
-        kicker: 'Punto de recuperación',
-        title: 'Polvillo de cocoa y torta trozada',
-        sub: 'Recuperación de merma de cocoa y torta en proceso alcalino tipo 2. Resultados de proceso y proyección de material pendiente valorizado a $8.00 por kilogramo.',
+        kicker: 'Reporte de recuperación',
+        title: 'Merma de cocoa y torta trozada',
+        sub: 'Resultados de recuperación de merma en proceso alcalino de tipo 2 (5 horas de trabajo). Incluye carga microbiana, capacidad operativa y proyección del material pendiente al 01/09/2026.',
         chips: [
           { txt: 'Proceso alcalino tipo 2' },
           { txt: 'Cocoa y torta trozada' },
-          { txt: 'Precio $8.00 / kg' }
+          { txt: 'S/ 17.00 por kg' }
         ]
       },
       {
         kind: 'kpis',
-        title: 'Resumen del proyecto',
+        title: 'Resultados de recuperación',
         kicker: 'Cifras clave',
         imageKey: 'polvillo',
         imageCaption: 'Registro — Polvillo de cocoa y torta',
         items: [
-          { label: 'Merma ya recuperada', val: 425, unit: 'kg', foot: 'Cocoa y torta — valor $3,400' },
-          { label: 'Pendiente por recuperar', val: 4300, unit: 'kg', foot: '172 sacos × 25 kg — al 01/09/2026' },
-          { label: 'Valor ya recuperado', val: 3400, prefix: '$', unit: '', foot: '425 kg × $8.00 / kg' },
-          { label: 'Valor proyectado pendiente', val: 34400, prefix: '$', unit: '', foot: '4,300 kg × $8.00 / kg' }
+          { label: 'Merma recuperada (cocoa y torta)', val: 425, unit: 'kg', foot: 'Ya recuperado en proceso' },
+          { label: 'Valor ya recuperado', val: 7225, prefix: 'S/ ', unit: '', foot: '425 kg × S/ 17.00 / kg' },
+          { label: 'Carga inicial de aerobios', val: 90000, unit: ' UFC/g', foot: 'Antes del reproceso de merma' },
+          { label: 'Promedio aerobios post-proceso', val: 4133, unit: ' UFC/g', foot: 'Reducción significativa de carga' }
+        ]
+      },
+      {
+        kind: 'chart',
+        title: 'Capacidad de recuperación — 1 persona',
+        kicker: 'Promedio operativo',
+        sub: 'Recuperación de merma de cocoa y torta entre 8 a 10 horas. Capacidad promedio y variación por suciedad extrema.',
+        chartType: 'bar',
+        labels: ['Promedio (80 kg)', 'Variación alta (70 kg)', 'Mayor contaminación (45 kg)'],
+        datasets: [
+          { label: 'Kg por jornada', data: [80, 70, 45], color: '#6A1B9A' }
+        ]
+      },
+      {
+        kind: 'twocol',
+        title: 'Detalle de recuperación y valor diario',
+        kicker: 'Capacidad operativa',
+        left: {
+          title: 'Capacidad por jornada',
+          sub: '1 persona · 8 a 10 horas',
+          items: [
+            { text: 'Promedio de recuperación', status: '70 – 80 kg' },
+            { text: 'Variación por suciedad extrema', status: 'Mínimo 45 kg' },
+            { text: 'Precio de referencia', status: 'S/ 17.00 / kg' }
+          ]
+        },
+        right: {
+          title: 'Valor diario estimado',
+          sub: 'Según kilogramos recuperados',
+          items: [
+            { text: '80 kg × S/ 17', status: 'S/ 1,360 valor diario' },
+            { text: '70 kg × S/ 17', status: 'S/ 1,190 valor diario' },
+            { text: '45 kg × S/ 17', status: 'S/ 765 valor diario' }
+          ]
+        }
+      },
+      {
+        kind: 'chart',
+        title: 'Reducción de carga microbiana',
+        kicker: 'Comportamiento / tendencia',
+        sub: 'Evolución de la carga de aerobios (UFC/g) desde la carga inicial hasta los ensayos de proceso.',
+        chartType: 'bar',
+        labels: ['Carga inicial', 'Ensayo 1 (6.85%H)', 'Ensayo 2 (6.98%H)', 'Ensayo 3 (12%H)'],
+        datasets: [
+          { label: 'Aerobios UFC/g', data: [90000, 5900, 3900, 2600], color: '#D97706' }
+        ]
+      },
+      {
+        kind: 'table',
+        title: 'Pruebas de proceso (carga microbiana)',
+        kicker: 'Detalle / casos',
+        sub: 'Ensayos de reducción de carga de aerobios en el proceso de recuperación.',
+        headers: ['Ensayo', 'Humedad', 'Tiempo', 'Temp.', 'Aerobios UFC/g', 'Coliformes', 'Resultado'],
+        rows: [
+          ['Prueba 1 (Alta carga)', '6.85%', '2 h', '100 °C', '5,900', '0', 'Exitoso'],
+          ['Prueba 2', '6.98%', '2 h', '100 °C', '3,900', '0', 'Exitoso'],
+          ['Prueba 3', '12.00%', '—', '100 °C', '2,600', '0', 'Exitoso']
+        ],
+        totals: ['Promedio', '8.61%', '—', '100 °C', '4,133', '0', 'Exitoso']
+      },
+      {
+        kind: 'kpis',
+        title: 'Proyección pendiente al 01/09/2026',
+        kicker: 'Material por recuperar',
+        items: [
+          { label: 'Bolsas / sacos pendientes', val: 172, unit: ' sacos', foot: '25 kg por cada saco' },
+          { label: 'Total kilos pendientes', val: 4300, unit: 'kg', foot: 'Cocoa + torta trozada' },
+          { label: 'Valor unitario', val: 17, prefix: 'S/ ', unit: ' / kg', foot: 'Precio por kilogramo' },
+          { label: 'Valor total proyectado', val: 73100, prefix: 'S/ ', unit: '', foot: '4,300 kg × S/ 17.00' }
+        ]
+      },
+      {
+        kind: 'chart',
+        title: 'Merma ya recuperada vs. pendiente',
+        kicker: 'Distribución física',
+        sub: 'Comparativa de kilogramos ya recuperados y material pendiente de recuperación.',
+        chartType: 'bar',
+        labels: ['Ya recuperada', 'Pendiente (172 sacos)', 'Total'],
+        datasets: [
+          { label: 'Kg', data: [425, 4300, 4725], color: '#6A1B9A' }
         ]
       },
       {
         kind: 'conclusion',
         tag: 'Conclusión',
-        text: 'Se han recuperado 425 kg de polvillo de cocoa y torta ($3,400). Quedan pendientes 4,300 kg (172 sacos) con un valor proyectado de $34,400 a $8.00 por kilogramo.',
+        text: 'Se han recuperado 425 kg de polvillo de cocoa y torta (S/ 7,225). Quedan pendientes 4,300 kg (172 sacos) con un valor proyectado de S/ 73,100 a S/ 17.00 por kilogramo. El proceso reduce la carga de aerobios de 90,000 a un promedio de 4,133 UFC/g.',
         chips: [
-          { lbl: 'Recuperado', val: '425 kg · $3,400' },
-          { lbl: 'Pendiente', val: '4,300 kg · $34,400' },
-          { lbl: 'Precio', val: '$8.00 / kg' }
+          { lbl: 'Recuperado', val: '425 kg · S/ 7,225' },
+          { lbl: 'Pendiente', val: '4,300 kg · S/ 73,100' },
+          { lbl: 'Precio', val: 'S/ 17.00 / kg' }
         ]
       }
     ]
