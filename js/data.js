@@ -1,5 +1,6 @@
 /* Datos de planta — recuperación de merma */
 const PRODUCTS = {
+
   despedradora: {
     key: 'despedradora',
     accent: '#00897B',
@@ -116,6 +117,14 @@ const PRODUCTS = {
         ]
       },
       {
+        kind: 'evidence',
+        title: 'Evidencia de muestreo',
+        kicker: 'Soporte documental',
+        sub: 'Registro de muestreo de nibs en caída de despedradora 1 y 2.',
+        imageKey: 'despedradora',
+        caption: 'Tabla de muestreo — Nibs raw de despedradora'
+      },
+      {
         kind: 'conclusion',
         tag: 'Conclusión',
         text: 'La recuperación de nibs en la despedradora es técnicamente viable, operativamente estable y económicamente rentable, con un impacto anual superior a los $42 mil.',
@@ -127,6 +136,7 @@ const PRODUCTS = {
       }
     ]
   },
+
   tostador: {
     key: 'tostador',
     accent: '#F9A825',
@@ -258,6 +268,14 @@ const PRODUCTS = {
         ]
       },
       {
+        kind: 'evidence',
+        title: 'Evidencia de ciclos',
+        kicker: 'Soporte documental',
+        sub: 'Registro de ciclos de recuperación de merma de limpieza del tostador.',
+        imageKey: 'tostador',
+        caption: 'Tabla de ciclos — Reducción merma NIBS'
+      },
+      {
         kind: 'conclusion',
         tag: 'Conclusión',
         text: 'La recuperación de la merma de limpieza del tostador es una oportunidad significativa. El método actual (Bühler) genera paradas de línea y costos adicionales; integrar el proceso a la descascarilladora maximizaría el beneficio económico y la eficiencia global de la planta.',
@@ -269,6 +287,7 @@ const PRODUCTS = {
       }
     ]
   },
+
   licor: {
     key: 'licor',
     accent: '#6D4C41',
@@ -343,8 +362,8 @@ const PRODUCTS = {
         title: 'Evidencia de registro',
         kicker: 'Soporte documental',
         sub: 'Registro de planta: merma de molino de pines / licor de cacao, ideas de reproceso y proyecciones.',
-        imageKey: 'licorPrensa',
-        caption: 'Tabla de recuperación — merma de molino de pines (licor de cacao)'
+        imageKey: 'licor',
+        caption: 'Tabla de recuperación — merma de tamizador de licor (x30)'
       },
       {
         kind: 'conclusion',
@@ -358,6 +377,7 @@ const PRODUCTS = {
       }
     ]
   },
+
   filtroPrensa: {
     key: 'filtroPrensa',
     accent: '#1565C0',
@@ -417,6 +437,14 @@ const PRODUCTS = {
         totals: ['Total general', '2,415.2', '8.7', '21,012.24']
       },
       {
+        kind: 'evidence',
+        title: 'Evidencia de recuperación',
+        kicker: 'Soporte documental',
+        sub: 'Registro consolidado de licor de filtro prensa 2025–2026.',
+        imageKey: 'filtroPrensa',
+        caption: 'Tabla de recuperación — Licor de filtro prensa'
+      },
+      {
         kind: 'conclusion',
         tag: 'Conclusión',
         text: 'La recuperación de licor de filtro prensa suma 2,415.2 kg entre 2025 y 2026, con un valor total de $21,012.24 a razón de $8.7 por kilogramo.',
@@ -428,6 +456,7 @@ const PRODUCTS = {
       }
     ]
   },
+
   polvillo: {
     key: 'polvillo',
     accent: '#6A1B9A',
@@ -513,6 +542,14 @@ const PRODUCTS = {
         }
       },
       {
+        kind: 'evidence',
+        title: 'Evidencia de proceso',
+        kicker: 'Soporte documental',
+        sub: 'Registro de recuperación de polvillo de cocoa y pruebas de carga microbiana. Coloca tus capturas en images/polvillo/.',
+        imageKey: 'polvillo',
+        caption: 'Registro de polvillo de cocoa y torta trozada'
+      },
+      {
         kind: 'conclusion',
         tag: 'Conclusión',
         text: 'Se han recuperado 425 kg de polvillo de cocoa y torta ($3,400). Quedan pendientes 4,300 kg (172 sacos) con un valor proyectado de $34,400 a $8.00 por kilogramo. El proceso reduce la carga de aerobios de 90,000 a un promedio de 4,133 UFC/g.',
@@ -524,6 +561,7 @@ const PRODUCTS = {
       }
     ]
   }
+
 };
 
 const LINE_ORDER = ['despedradora', 'tostador', 'licor', 'filtroPrensa', 'polvillo'];
