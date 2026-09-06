@@ -16,7 +16,7 @@ const App = (() => {
   const playIco = document.getElementById('pPlayIco');
 
   const DURATIONS = {
-    hero: 4500, kpis: 5500, chart: 6500, twocol: 5800, triad: 6200, table: 6800, evidence: 6000, conclusion: 999999
+    hero: 4500, kpis: 7000, chart: 6500, twocol: 5800, triad: 6200, table: 6800, evidence: 6000, conclusion: 999999
   };
 
   function fmt(v, dec, prefix) {
@@ -199,12 +199,18 @@ const App = (() => {
   }
 
   function tplKpis(s) {
-    return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
-      <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
-      <div class="kpi-grid">${s.items.map((k, i) => `<div class="kpi-card reveal" style="transition-delay:${0.18 + i * 0.08}s">
+    const src = (s.imageKey && typeof EVIDENCE !== 'undefined' && EVIDENCE[s.imageKey]) ? EVIDENCE[s.imageKey] : '';
+    const kpisHtml = `<div class="kpi-grid ${src ? 'kpi-grid-compact' : ''}">${s.items.map((k, i) => `<div class="kpi-card reveal" style="transition-delay:${0.18 + i * 0.08}s">
             <div class="kpi-ico">${icon(['scale','inventory','trending','payments'][i] || 'insights')}</div>
             <div class="kpi-val" data-target="${k.val}" data-dec="${k.dec ?? 0}" data-prefix="${k.prefix || ''}">0<span class="u">${k.unit || ''}</span></div>
             <div class="kpi-lbl">${k.label}</div><div class="kpi-foot">${k.foot}</div></div>`).join('')}</div>`;
+    const imgHtml = src ? `<div class="kpi-evidence reveal" style="transition-delay:.35s">
+        <img class="kpi-evidence-img" src="${src}" alt="${s.imageCaption || 'Evidencia'}" />
+        ${s.imageCaption ? `<p class="kpi-evidence-cap">${s.imageCaption}</p>` : ''}
+      </div>` : '';
+    return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
+      <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
+      <div class="kpi-layout ${src ? 'has-evidence' : ''}">${kpisHtml}${imgHtml}</div>`;
   }
 
   function tplChart(s) {
