@@ -133,6 +133,7 @@ body {
 .card[data-key="licor"]        { --card-accent: #6D4C41; }
 .card[data-key="filtroPrensa"] { --card-accent: #1565C0; }
 .card[data-key="polvillo"]     { --card-accent: #6A1B9A; }
+.card[data-key="fajasPrensa"]  { --card-accent: #BF360C; }
 
 #presentation {
   position: fixed; inset: 0; background: var(--md-sys-color-surface-dim);
@@ -417,17 +418,41 @@ table.data tbody tr {
 .btn-outlined svg { width: 18px; height: 18px; }
 
 .evidence-box {
-  margin-top: 20px; background: var(--md-sys-color-surface);
-  border-radius: var(--radius-md); box-shadow: var(--md-elevation-1);
-  padding: 16px; max-height: min(52vh, 420px); overflow: auto;
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  margin-top: 20px;
+  background: var(--md-sys-color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--md-elevation-1);
+  padding: 16px;
+  max-height: min(52vh, 420px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.evidence-box-multi {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: min(58vh, 480px);
+}
+.evidence-box-multi .evidence-img {
+  max-width: min(46%, 320px);
+  max-height: 280px;
+  object-fit: contain;
 }
 .evidence-img {
-  max-width: 100%; height: auto; border-radius: var(--radius-sm);
-  border: 1px solid var(--md-sys-color-outline-variant); display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  display: block;
 }
 .evidence-caption {
-  font-size: 0.75rem; color: var(--md-sys-color-outline); text-align: center;
+  font-size: 0.75rem;
+  color: var(--md-sys-color-outline);
+  text-align: center;
+  width: 100%;
 }
 
 .nav-btn {
