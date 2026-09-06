@@ -17,7 +17,7 @@ const PRODUCTS = {
       {
         kind: 'hero',
         kicker: 'Punto de muestreo',
-        title: 'Nibs raw de despedradora',
+        title: 'Recuperación de nibs en la etapa de despedradora',
         sub: 'Muestreo de la caída en ductos de despedradora 1 y 2. Se evalúa la pérdida de nibs por turno y la viabilidad de recuperarlos mediante limpieza programada en el equipo Bühler.',
         chips: [
           { txt: 'Caída despedradora 1 y 2 (ducto)' },
@@ -121,11 +121,11 @@ const PRODUCTS = {
       {
         kind: 'conclusion',
         tag: 'Conclusión',
-        text: 'La recuperación de nibs en la despedradora es técnicamente viable, operativamente estable y económicamente rentable, con un impacto anual superior a los $42 mil.',
+        text: 'El piloto de laboratorio confirma que la merma del tamizador de licor es recuperable: 30% de pasta de cacao, con 35% de grasa y baja acidez (1.69%). El proyecto queda a la espera de la entrega del derretidor y del traslado de la concha de piedra para pasar de piloto a operación en planta.',
         chips: [
-          { lbl: 'Merma evaluada', val: '736 kg / 7 días' },
-          { lbl: 'Recuperación proyectada', val: '8,832 kg/año' },
-          { lbl: 'Impacto anual', val: '$42,393.6' }
+          { lbl: 'Merma promedio', val: '200 kg/día' },
+          { lbl: 'Recuperación piloto', val: '30%' },
+          { lbl: 'Proyección anual (real)', val: '$23,506' }
         ]
       }
     ]
@@ -148,7 +148,7 @@ const PRODUCTS = {
         kind: 'hero',
         kicker: 'Punto de recuperación',
         title: 'Reducción merma NIBS',
-        sub: 'Evaluación de la merma generada durante la limpieza del tostador (controladores de temperatura y tolva de descarga). Se cuantifica el impacto económico y se proponen mejoras al método actual (Bühler).',
+        sub: 'Evaluación de la merma generada durante la limpieza del tostador. Se cuantifica el impacto económico y se proponen mejoras al método actual (Bühler).',
         chips: [
           { txt: 'Limpieza de tostador' },
           { txt: 'Nov 2025 – May 2026' },
@@ -201,72 +201,9 @@ const PRODUCTS = {
         totals: ['9 ciclos', '9,396.4', '4,345.5', '46.3%', '—', '41,707', '—']
       },
       {
-        kind: 'triad',
-        title: 'Impactos negativos del método actual',
-        kicker: 'Riesgos operativos',
-        sub: 'El uso del equipo Bühler para recuperar la merma genera tres tipos de impacto identificados por el equipo.',
-        cols: [
-          {
-            title: 'Parada de línea productiva',
-            items: [
-              'Se detiene la línea de torta de cacao reducida en grasa.',
-              'Pérdida de producción estimada: 20 TM.',
-              'Impacto económico: ≈ $80,000 (20,000 kg × $4/kg).'
-            ]
-          },
-          {
-            title: 'Uso de equipo Bühler',
-            items: [
-              'Requiere operación dedicada de 2 operarios.',
-              'Pago regular de 8 horas + horas extra diurnas.',
-              'Incremento del costo operativo no planificado.'
-            ]
-          },
-          {
-            title: 'Pérdida de material',
-            items: [
-              'Parte de la granilla aún se pierde en el Bühler.',
-              'La eficiencia real queda limitada por el método.',
-              'Margen de mejora identificado por el equipo.'
-            ]
-          }
-        ]
-      },
-      {
-        kind: 'triad',
-        title: 'Propuestas de mejora',
-        kicker: 'Siguiente paso',
-        sub: 'Tres líneas de mejora planteadas por mantenimiento, producción y calidad.',
-        cols: [
-          {
-            title: 'Integración del proceso',
-            items: [
-              'Incorporar la limpieza del tostador directamente a la descascarilladora.',
-              'Eliminar traslados y reprocesos innecesarios.'
-            ]
-          },
-          {
-            title: 'Eliminación de paradas',
-            items: [
-              'No utilizar el equipo Bühler para esta recuperación.',
-              'Evitar detención de la línea de torta reducida en grasa.',
-              'Reducción inmediata de pérdidas por producción no realizada.'
-            ]
-          },
-          {
-            title: 'Optimización del rendimiento',
-            items: [
-              'Mejor aprovechamiento de la granilla presente en la merma.',
-              'Incremento del % de recuperación respecto al método actual.',
-              'Proceso más continuo y controlado.'
-            ]
-          }
-        ]
-      },
-      {
         kind: 'conclusion',
         tag: 'Conclusión',
-        text: 'La recuperación de la merma de limpieza del tostador es una oportunidad significativa. El método actual (Bühler) genera paradas de línea y costos adicionales; integrar el proceso a la descascarilladora maximizaría el beneficio económico y la eficiencia global de la planta.',
+        text: 'La recuperación de la merma de limpieza del tostador es una oportunidad significativa. Integrar el proceso a la descascarilladora maximizaría el beneficio económico y la eficiencia global de la planta.',
         chips: [
           { lbl: 'Ciclos evaluados', val: '9' },
           { lbl: 'Recuperación global', val: '46.3%' },
@@ -293,7 +230,7 @@ const PRODUCTS = {
         kind: 'hero',
         kicker: 'Punto de recuperación',
         title: 'Merma de tamizador de licor',
-        sub: 'Seguimiento de la merma diaria generada en el molino de pines (tamizador de licor) y evaluación de dos alternativas para recuperar la pasta de cacao contenida en ella.',
+        sub: 'Seguimiento de la merma diaria generada en el molino de pines (tamizador de licor) y evaluación de alternativas para recuperar la pasta de cacao.',
         chips: [
           { txt: 'Molino de pines · línea de licor' },
           { txt: '01 de junio de 2026' },
@@ -304,8 +241,6 @@ const PRODUCTS = {
         kind: 'kpis',
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
-        imageKey: 'licor',
-        imageCaption: 'Registro — Merma de tamizador de licor',
         items: [
           { label: 'Merma promedio por día', val: 200, unit: 'kg', foot: 'Molino de pines · 01 de junio de 2026' },
           { label: 'Recuperación en piloto de laboratorio', val: 30, unit: '%', foot: '35% de grasa de cacao · 1.69% de acidez' },
@@ -314,43 +249,9 @@ const PRODUCTS = {
         ]
       },
       {
-        kind: 'chart',
-        title: 'Escenario inicial vs. resultado de piloto',
-        kicker: 'Comparativo',
-        sub: 'La proyección inicial asumía 60 kg de pasta recuperada cada 24 horas; el piloto de laboratorio midió un resultado real.',
-        chartType: 'bar',
-        labels: ['Escenario inicial (proyectado)', 'Piloto de laboratorio (real)'],
-        datasets: [
-          { label: 'Proyección de recuperación anual ($)', data: [122640, 23506], color: '#6D4C41' }
-        ]
-      },
-      {
-        kind: 'twocol',
-        title: 'Ideas y resultado del piloto',
-        kicker: 'Detalle técnico',
-        left: {
-          title: 'Ideas planteadas',
-          sub: 'Para reprocesar la merma',
-          items: [
-            { text: '1. Usar el derretidor y verter en tamizador de molino de licor', status: 'Pendiente entrega del equipo' },
-            { text: '2. Refinar en concha de piedra → derretidor → tamizador', status: 'Pendiente mantenimiento — traslado de Lima a Chincha' }
-          ]
-        },
-        right: {
-          title: 'Resultado del piloto de laboratorio',
-          sub: 'Refinado en refinadora de laboratorio',
-          items: [
-            { text: 'Recuperación de pasta de cacao', status: '30%' },
-            { text: 'Grasa de cacao en lo recuperado', status: '35%' },
-            { text: 'Acidez de la pasta recuperada', status: '1.69%' },
-            { text: 'Precio de referencia del licor', status: '$5.6 / kg' }
-          ]
-        }
-      },
-      {
         kind: 'conclusion',
         tag: 'Conclusión',
-        text: 'El piloto de laboratorio confirma que la merma del tamizador de licor es recuperable: 30% de pasta de cacao, con 35% de grasa y baja acidez (1.69%). El proyecto queda a la espera de la entrega del derretidor y del traslado de la concha de piedra para pasar de piloto a operación en planta.',
+        text: 'El piloto de laboratorio confirma que la merma del tamizador de licor es recuperable: 30% de pasta de cacao, con 35% de grasa y baja acidez (1.69%). El proyecto queda a la espera de la entrega del derretidor y del traslado de la concha de piedra.',
         chips: [
           { lbl: 'Merma promedio', val: '200 kg/día' },
           { lbl: 'Recuperación piloto', val: '30%' },
@@ -388,8 +289,6 @@ const PRODUCTS = {
         kind: 'kpis',
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
-        imageKey: 'filtroPrensa',
-        imageCaption: 'Recuperación — Licor de filtro prensa',
         items: [
           { label: 'Resultado 2025', val: 1002.8, unit: 'kg', foot: 'Recuperación del periodo 2025' },
           { label: 'Resultado 2026', val: 1412.4, unit: 'kg', foot: 'Recuperación del periodo 2026' },
@@ -471,58 +370,9 @@ const PRODUCTS = {
         ]
       },
       {
-        kind: 'chart',
-        title: 'Merma recuperada vs. pendiente',
-        kicker: 'Comparativo',
-        sub: 'Distribución de kilogramos ya recuperados y pendientes de recuperación.',
-        chartType: 'bar',
-        labels: ['Ya recuperada', 'Pendiente', 'Total'],
-        datasets: [
-          { label: 'Kg', data: [425, 4300, 4725], color: '#6A1B9A' }
-        ]
-      },
-      {
-        kind: 'table',
-        title: 'Pruebas de proceso (carga microbiana)',
-        kicker: 'Detalle técnico',
-        sub: 'Ensayos de reducción de carga de aerobios en el proceso de recuperación.',
-        headers: ['Ensayo', 'Humedad', 'Tiempo', 'Temp.', 'Aerobios UFC/g', 'Coliformes', 'Resultado'],
-        rows: [
-          ['Prueba 1', '6.85%', '2 h', '100 °C', '5,900', '0', 'Exitoso'],
-          ['Prueba 2', '6.98%', '2 h', '100 °C', '3,900', '0', 'Exitoso'],
-          ['Prueba 3', '12.00%', '—', '100 °C', '2,600', '0', 'Exitoso']
-        ],
-        totals: ['Promedio', '8.61%', '—', '100 °C', '4,133', '0', 'Exitoso']
-      },
-      {
-        kind: 'twocol',
-        title: 'Capacidad operativa y valorización',
-        kicker: 'Detalle',
-        left: {
-          title: 'Capacidad de recuperación',
-          sub: '1 persona · 8 a 10 horas',
-          items: [
-            { text: 'Promedio por jornada', status: '70 – 80 kg' },
-            { text: 'Variación por suciedad extrema', status: 'Mínimo 45 kg' },
-            { text: 'Valor diario (80 kg)', status: '80 × $8 = $640' },
-            { text: 'Valor diario (70 kg)', status: '70 × $8 = $560' }
-          ]
-        },
-        right: {
-          title: 'Carga microbiana',
-          sub: 'Antes y después del proceso',
-          items: [
-            { text: 'Carga inicial de aerobios', status: '90,000 UFC/g' },
-            { text: 'Promedio post-proceso', status: '4,133 UFC/g' },
-            { text: 'Coliformes post-proceso', status: '0' },
-            { text: 'Temperatura de proceso', status: '100 °C' }
-          ]
-        }
-      },
-      {
         kind: 'conclusion',
         tag: 'Conclusión',
-        text: 'Se han recuperado 425 kg de polvillo de cocoa y torta ($3,400). Quedan pendientes 4,300 kg (172 sacos) con un valor proyectado de $34,400 a $8.00 por kilogramo. El proceso reduce la carga de aerobios de 90,000 a un promedio de 4,133 UFC/g.',
+        text: 'Se han recuperado 425 kg de polvillo de cocoa y torta ($3,400). Quedan pendientes 4,300 kg (172 sacos) con un valor proyectado de $34,400 a $8.00 por kilogramo.',
         chips: [
           { lbl: 'Recuperado', val: '425 kg · $3,400' },
           { lbl: 'Pendiente', val: '4,300 kg · $34,400' },
@@ -530,8 +380,100 @@ const PRODUCTS = {
         ]
       }
     ]
+  },
+
+  fajasPrensa: {
+    key: 'fajasPrensa',
+    accent: '#BF360C',
+    tag: 'Etapa · Fajas de prensa',
+    name: 'Licor de cacao prensa',
+    tile: {
+      num: '06',
+      title: 'Licor de cacao prensa',
+      desc: 'Recuperación de licor en fajas de prensa 1, 2 y 3. Idea: bandejas de acero inoxidable (pendiente de aprobación).',
+      stat1: { val: '42 kg', lbl: 'Licor recuperado' },
+      stat2: { val: '$386.4', lbl: 'Monto recuperado' }
+    },
+    slides: [
+      {
+        kind: 'hero',
+        kicker: 'Punto de recuperación',
+        title: 'Licor de cacao prensa',
+        sub: 'Recuperación de licor de cacao en fajas de prensa 1, 2 y 3. Se evalúa colocar bandejas de acero inoxidable; por el momento se usan bolsas amarillas.',
+        chips: [
+          { txt: 'Fajas de prensa 1, 2 y 3' },
+          { txt: '22 – 27 mar 2026' },
+          { txt: 'Turnos 1 y 2 · 6 días' }
+        ]
+      },
+      {
+        kind: 'kpis',
+        title: 'Resumen del proyecto',
+        kicker: 'Cifras clave',
+        imageKey: 'fajasPrensa',
+        imageCaption: 'Licor recuperado en fajas de prensa — registro fotográfico',
+        items: [
+          { label: 'Kg de licor recuperado', val: 42, unit: 'kg', foot: 'Periodo 22–27 mar 2026 · 6 días' },
+          { label: 'Precio licor de cacao', val: 9.2, prefix: '$', unit: '/ kg', foot: 'Precio de referencia del periodo' },
+          { label: 'Monto recuperado', val: 386.4, prefix: '$', unit: '', foot: '42 kg × $9.2 / kg' },
+          { label: 'Proyección recuperación anual', val: 23506, prefix: '$', unit: '', foot: 'Proyección con base en el resultado del periodo' }
+        ]
+      },
+      {
+        kind: 'table',
+        title: 'Registro de recuperación',
+        kicker: 'Detalle',
+        sub: 'Datos de planta: fajas de prensa 1, 2 y 3.',
+        headers: ['Punto', 'Fecha', 'Turno', 'Días', 'Kg licor', 'Precio $/kg', 'Monto $', 'Proy. anual $'],
+        rows: [
+          ['Fajas de prensa 1, 2 y 3', '22–27 mar 2026', '1 y 2', '6', '42', '9.2', '386.4', '23,506']
+        ],
+        totals: ['Total periodo', '—', '—', '6', '42', '9.2', '386.4', '23,506']
+      },
+      {
+        kind: 'twocol',
+        title: 'Ideas y estado',
+        kicker: 'Detalle técnico',
+        left: {
+          title: 'Ideas planteadas',
+          sub: 'Para reprocesar el licor',
+          items: [
+            { text: 'Colocar bandejas de acero inoxidable', status: 'Cantidad propuesta: 5' },
+            { text: 'Uso actual de bolsas amarillas', status: 'Solución temporal en planta' }
+          ]
+        },
+        right: {
+          title: 'Estado de la idea',
+          sub: 'Aprobación y ejecución',
+          items: [
+            { text: 'Estado de aprobación', status: 'Pendiente de aprobación' },
+            { text: 'Fecha a ejecutar (referencial)', status: '22–27 mar 2026' },
+            { text: 'Precio de referencia del licor', status: '$9.2 / kg' }
+          ]
+        }
+      },
+      {
+        kind: 'evidence',
+        title: 'Evidencia fotográfica',
+        kicker: 'Soporte documental',
+        sub: 'Registro del licor recuperado en fajas de prensa (bolsas amarillas).',
+        imageKey: 'fajasPrensa',
+        imageKey2: 'fajasPrensa2',
+        caption: 'Licor de cacao recuperado — fajas de prensa 1, 2 y 3'
+      },
+      {
+        kind: 'conclusion',
+        tag: 'Conclusión',
+        text: 'En 6 días se recuperaron 42 kg de licor de cacao en fajas de prensa 1, 2 y 3, por un monto de $386.4 ($9.2/kg). La proyección anual asciende a $23,506. Queda pendiente la aprobación de las bandejas de acero inoxidable.',
+        chips: [
+          { lbl: 'Kg recuperados', val: '42 kg' },
+          { lbl: 'Monto', val: '$386.4' },
+          { lbl: 'Proyección anual', val: '$23,506' }
+        ]
+      }
+    ]
   }
 
 };
 
-const LINE_ORDER = ['despedradora', 'tostador', 'licor', 'filtroPrensa', 'polvillo'];
+const LINE_ORDER = ['despedradora', 'tostador', 'licor', 'filtroPrensa', 'polvillo', 'fajasPrensa'];
