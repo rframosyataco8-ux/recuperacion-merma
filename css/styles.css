@@ -109,10 +109,10 @@ body {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1200px;
 }
 @media (max-width: 900px) {
   .cards { grid-template-columns: 1fr; max-width: 420px; }
@@ -196,6 +196,8 @@ body {
 .card[data-key="despedradora"] { --card-accent: #00897B; }
 .card[data-key="tostador"]     { --card-accent: #F9A825; }
 .card[data-key="licor"]        { --card-accent: #6D4C41; }
+.card[data-key="filtroPrensa"] { --card-accent: #1565C0; }
+.card[data-key="polvillo"]     { --card-accent: #6A1B9A; }
 
 /* ========== PRESENTATION ========== */
 #presentation {
@@ -690,6 +692,33 @@ table.data tbody tr {
   color: var(--md-sys-color-on-surface);
 }
 .btn-outlined svg { width: 18px; height: 18px; }
+
+/* Evidence */
+.evidence-box {
+  margin-top: 20px;
+  background: var(--md-sys-color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--md-elevation-1);
+  padding: 16px;
+  max-height: min(52vh, 420px);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.evidence-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  display: block;
+}
+.evidence-caption {
+  font-size: 0.75rem;
+  color: var(--md-sys-color-outline);
+  text-align: center;
+}
 
 /* Nav arrows */
 .nav-btn {
