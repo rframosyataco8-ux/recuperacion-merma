@@ -230,19 +230,19 @@ const PRODUCTS = {
     tile: {
       num: '04',
       title: 'Licor de filtro prensa',
-      desc: 'Recuperación acumulada de licor de filtro prensa. Resultados 2025 y 2026 valorizados a $8.7 por kg.',
-      stat1: { val: '2,415.2 kg', lbl: 'Total recuperado' },
-      stat2: { val: '$21.0K', lbl: 'Valor total' }
+      desc: 'Promedio mensual de recuperación de licor de filtro prensa. 185.9 kg/mes a $8.7 por kg. Proyección anual $19,407.96.',
+      stat1: { val: '185.9 kg', lbl: 'Promedio / mes' },
+      stat2: { val: '$19.4K', lbl: 'Proyección anual' }
     },
     slides: [
       {
         kind: 'hero',
         kicker: 'Punto de recuperación',
         title: 'Licor de filtro prensa',
-        sub: 'Consolidado de recuperación de licor de filtro prensa correspondiente a los periodos 2025 y 2026, valorizado a $8.7 por kilogramo.',
+        sub: 'Recuperación de licor de filtro prensa con un promedio mensual de 185.9 kg, valorizado a $8.7 por kilogramo (S/ 1,617.3 por mes).',
         chips: [
           { txt: 'Filtro prensa' },
-          { txt: '2025 – 2026' },
+          { txt: 'Promedio mensual' },
           { txt: 'Precio $8.7 / kg' }
         ]
       },
@@ -251,43 +251,43 @@ const PRODUCTS = {
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
         items: [
-          { label: 'Resultado 2025', val: 1002.8, unit: 'kg', foot: 'Recuperación del periodo 2025' },
-          { label: 'Resultado 2026', val: 1412.4, unit: 'kg', foot: 'Recuperación del periodo 2026' },
-          { label: 'Total general', val: 2415.2, unit: 'kg', foot: '1002.8 + 1412.4 kg' },
-          { label: 'Valor total', val: 21012.24, prefix: '$', unit: '', foot: '2,415.2 kg × $8.7 / kg' }
+          { label: 'Promedio mensual', val: 185.9, unit: 'kg', foot: 'Kilogramos de licor recuperados por mes' },
+          { label: 'Precio por kilogramo', val: 8.7, prefix: '$', unit: '/ kg', foot: 'Precio de referencia en dólares' },
+          { label: 'Valor mensual', val: 1617.3, prefix: 'S/ ', unit: '', foot: '185.9 kg × $8.7 / kg' },
+          { label: 'Proyección anual', val: 19407.96, prefix: '$', unit: '', foot: '185.9 kg × 12 meses × $8.7 / kg' }
         ]
       },
       {
         kind: 'chart',
-        title: 'Recuperación por periodo',
+        title: 'Proyección mensual vs. anual',
         kicker: 'Comparativo',
-        sub: 'Kilogramos de licor de filtro prensa recuperados en 2025 y 2026.',
+        sub: 'Kilogramos y valor del promedio mensual frente a la proyección de 12 meses.',
         chartType: 'bar',
-        labels: ['2025', '2026', 'Total'],
+        labels: ['Kg / mes', 'Kg / año', 'Valor mes ($)', 'Valor año ($)'],
         datasets: [
-          { label: 'Kg recuperados', data: [1002.8, 1412.4, 2415.2], color: '#1565C0' }
+          { label: 'Cantidad', data: [185.9, 2230.8, 1617.3, 19407.96], color: '#1565C0' }
         ]
       },
       {
         kind: 'table',
-        title: 'Detalle de recuperación',
-        kicker: 'Historial',
-        sub: 'Resultados por periodo y valorización.',
-        headers: ['Periodo', 'Kg recuperados', 'Precio $/kg', 'Valor $'],
+        title: 'Detalle de proyección',
+        kicker: 'Valorización',
+        sub: 'Promedio mensual y proyección anual a $8.7 por kilogramo.',
+        headers: ['Concepto', 'Kg', 'Precio $/kg', 'Valor $', 'Valor S/'],
         rows: [
-          ['2025', '1,002.8', '8.7', '8,724.36'],
-          ['2026', '1,412.4', '8.7', '12,287.88']
+          ['Promedio mensual', '185.9', '8.7', '1,617.33', '1,617.3'],
+          ['Proyección anual (×12)', '2,230.8', '8.7', '19,407.96', '—']
         ],
-        totals: ['Total general', '2,415.2', '8.7', '21,012.24']
+        totals: ['Total proyectado año', '2,230.8', '8.7', '19,407.96', '—']
       },
       {
         kind: 'conclusion',
         tag: 'Conclusión',
-        text: 'La recuperación de licor de filtro prensa suma 2,415.2 kg entre 2025 y 2026, con un valor total de $21,012.24 a razón de $8.7 por kilogramo.',
+        text: 'El promedio mensual de recuperación de licor de filtro prensa es de 185.9 kg, equivalentes a S/ 1,617.3 por mes a $8.7 por kilogramo. La proyección anual asciende a $19,407.96.',
         chips: [
-          { lbl: 'Total kg', val: '2,415.2' },
-          { lbl: 'Precio unitario', val: '$8.7 / kg' },
-          { lbl: 'Valor total', val: '$21,012.24' }
+          { lbl: 'Promedio / mes', val: '185.9 kg' },
+          { lbl: 'Valor mensual', val: 'S/ 1,617.3' },
+          { lbl: 'Proyección anual', val: '$19,407.96' }
         ]
       }
     ]
