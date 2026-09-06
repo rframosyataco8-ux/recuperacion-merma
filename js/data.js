@@ -4,10 +4,10 @@ const PRODUCTS = {
     key: 'despedradora',
     accent: '#00897B',
     tag: 'Etapa 01 \u00b7 Despedradora',
-    name: 'Recuperación de nibs \u2014 Despedradora',
+    name: 'Nibs raw de despedradora',
     tile: {
       num: '01',
-      title: 'Nibs raw en ductos de caída',
+      title: 'Nibs raw de despedradora',
       desc: 'Muestreo en caída de despedradora 1 y 2. Recuperación mediante limpieza programada en Bühler.',
       stat1: { val: '736 kg', lbl: 'Merma / 7 días' },
       stat2: { val: '$42.4K', lbl: 'Impacto anual' }
@@ -16,7 +16,7 @@ const PRODUCTS = {
       {
         kind: 'hero',
         kicker: 'Punto de muestreo',
-        title: 'Recuperación de nibs en la etapa de despedradora',
+        title: 'Nibs raw de despedradora',
         sub: 'Muestreo de la caída en ductos de despedradora 1 y 2. Se evalúa la pérdida de nibs por turno y la viabilidad de recuperarlos mediante limpieza programada en el equipo Bühler.',
         chips: [
           { txt: 'Caída despedradora 1 y 2 (ducto)' },
@@ -131,11 +131,11 @@ const PRODUCTS = {
     key: 'tostador',
     accent: '#F9A825',
     tag: 'Etapa 02 \u00b7 Tostador',
-    name: 'Reducción de merma NIBS \u2014 Limpieza de tostador',
+    name: 'Reducción merma NIBS',
     tile: {
       num: '02',
-      title: 'Merma de limpieza del tostador',
-      desc: 'Acopio semanal de merma de limpieza. Recuperación en Bühler con 9 ciclos evaluados y propuestas de mejora.',
+      title: 'Reducción merma NIBS',
+      desc: 'Acopio semanal de merma de limpieza del tostador. Recuperación en Bühler con 9 ciclos evaluados y propuestas de mejora.',
       stat1: { val: '46.3%', lbl: 'Recuperación global' },
       stat2: { val: '$100.8K', lbl: 'Proyección anual' }
     },
@@ -143,7 +143,7 @@ const PRODUCTS = {
       {
         kind: 'hero',
         kicker: 'Punto de recuperación',
-        title: 'Recuperación de merma de limpieza del tostador',
+        title: 'Reducción merma NIBS',
         sub: 'Evaluación de la merma generada durante la limpieza del tostador (controladores de temperatura y tolva de descarga). Se cuantifica el impacto económico y se proponen mejoras al método actual (Bühler).',
         chips: [
           { txt: 'Limpieza de tostador' },
@@ -273,11 +273,11 @@ const PRODUCTS = {
     key: 'licor',
     accent: '#6D4C41',
     tag: 'Etapa 03 \u00b7 Molienda',
-    name: 'Merma de tamizador de licor de cacao',
+    name: 'Merma de tamizador de licor',
     tile: {
       num: '03',
-      title: 'Merma del molino de pines',
-      desc: 'Reprocesamiento de pasta de cacao vía derretidor. Piloto de laboratorio ya realizado con 30% de recuperación.',
+      title: 'Merma de tamizador de licor',
+      desc: 'Reprocesamiento de pasta de cacao vía derretidor. Piloto de laboratorio realizado con 30% de recuperación.',
       stat1: { val: '200 kg', lbl: 'Merma promedio / día' },
       stat2: { val: '30%', lbl: 'Recuperación piloto' }
     },
@@ -285,7 +285,7 @@ const PRODUCTS = {
       {
         kind: 'hero',
         kicker: 'Punto de recuperación',
-        title: 'Merma del tamizador de licor de cacao',
+        title: 'Merma de tamizador de licor',
         sub: 'Seguimiento de la merma diaria generada en el molino de pines (tamizador de licor) y evaluación de dos alternativas para recuperar la pasta de cacao contenida en ella.',
         chips: [
           { txt: 'Molino de pines \u00b7 línea de licor' },
