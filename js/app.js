@@ -16,7 +16,7 @@ const App = (() => {
   const playIco = document.getElementById('pPlayIco');
 
   const DURATIONS = {
-    hero: 4500, kpis: 5500, chart: 6500, twocol: 5800, triad: 6200, table: 6800, conclusion: 999999
+    hero: 4500, kpis: 5500, chart: 6500, twocol: 5800, triad: 6200, table: 6800, evidence: 6000, conclusion: 999999
   };
 
   function fmt(v, dec, prefix) {
@@ -185,6 +185,7 @@ const App = (() => {
     else if (s.kind === 'twocol') inner = tplTwocol(s);
     else if (s.kind === 'triad') inner = tplTriad(s);
     else if (s.kind === 'table') inner = tplTable(s);
+    else if (s.kind === 'evidence') inner = tplEvidence(s);
     else if (s.kind === 'conclusion') inner = tplConclusion(s);
     return `<div class="slide ${s.kind}-slide">${inner}</div>`;
   }
@@ -240,6 +241,17 @@ const App = (() => {
             <tbody>${s.rows.map((r, i) => `<tr style="transition-delay:${0.08 + i * 0.05}s">${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}
               ${s.totals ? `<tr class="totals" style="transition-delay:${0.15 + s.rows.length * 0.05}s">${s.totals.map(c => `<td>${c}</td>`).join('')}</tr>` : ''}
             </tbody></table></div></div>`;
+  }
+
+  function tplEvidence(s) {
+    const src = (typeof EVIDENCE !== 'undefined' && EVIDENCE[s.imageKey]) ? EVIDENCE[s.imageKey] : '';
+    return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
+      <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
+      <p class="slide-p reveal" style="transition-delay:.18s">${s.sub || ''}</p>
+      <div class="evidence-box reveal" style="transition-delay:.28s">
+        ${src ? `<img class="evidence-img" src="${src}" alt="${s.caption || 'Evidencia'}" />` : '<p class="slide-p">Sin imagen de evidencia disponible.</p>'}
+        ${s.caption ? `<p class="evidence-caption">${s.caption}</p>` : ''}
+      </div>`;
   }
 
   function tplConclusion(s) {
