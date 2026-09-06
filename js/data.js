@@ -251,10 +251,10 @@ const PRODUCTS = {
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
         items: [
-          { label: 'Promedio mensual', val: 185.9, unit: 'kg', foot: 'Kilogramos de licor recuperados por mes' },
-          { label: 'Precio por kilogramo', val: 8.7, prefix: '$', unit: '/ kg', foot: 'Precio de referencia en dólares' },
-          { label: 'Valor mensual', val: 1617.3, prefix: 'S/ ', unit: '', foot: '185.9 kg × $8.7 / kg' },
-          { label: 'Proyección anual', val: 19407.96, prefix: '$', unit: '', foot: '185.9 kg × 12 meses × $8.7 / kg' }
+          { label: 'Promedio mensual', val: 185.9, unit: 'kg', dec: 1, foot: 'Kilogramos de licor recuperados por mes' },
+          { label: 'Precio por kilogramo', val: 8.7, prefix: '$', unit: '/ kg', dec: 1, foot: 'Precio de referencia en dólares' },
+          { label: 'Valor mensual', val: 1617.3, prefix: 'S/ ', unit: '', dec: 1, foot: '185.9 kg × $8.7 / kg' },
+          { label: 'Proyección anual', val: 19407.96, prefix: '$', unit: '', dec: 2, foot: '185.9 kg × 12 meses × $8.7 / kg' }
         ]
       },
       {
