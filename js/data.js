@@ -232,7 +232,7 @@ const PRODUCTS = {
       title: 'Licor de filtro prensa',
       desc: 'Promedio mensual de recuperación de licor de filtro prensa. 185.9 kg/mes a $8.7 por kg. Proyección anual $19,407.96.',
       stat1: { val: '185.9 kg', lbl: 'Promedio / mes' },
-      stat2: { val: '$19.4K', lbl: 'Proyección anual' }
+      stat2: { val: '$19,407.96', lbl: 'Proyección anual' }
     },
     slides: [
       {
@@ -275,7 +275,7 @@ const PRODUCTS = {
         sub: 'Promedio mensual y proyección anual a $8.7 por kilogramo.',
         headers: ['Concepto', 'Kg', 'Precio $/kg', 'Valor $', 'Valor S/'],
         rows: [
-          ['Promedio mensual', '185.9', '8.7', '1,617.33', '1,617.3'],
+          ['Promedio mensual', '185.9', '8.7', '1,617.3', '1,617.3'],
           ['Proyección anual (×12)', '2,230.8', '8.7', '19,407.96', '—']
         ],
         totals: ['Total proyectado año', '2,230.8', '8.7', '19,407.96', '—']
