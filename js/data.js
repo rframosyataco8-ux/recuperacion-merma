@@ -29,6 +29,8 @@ const PRODUCTS = {
         kind: 'kpis',
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
+        imageKey: 'despedradora',
+        imageCaption: 'Registro de muestreo — Nibs raw de despedradora',
         items: [
           { label: 'Pérdida estimada por día', val: 90, unit: 'kg / 24h', foot: 'Turno 1 (50 kg) + Turno 2 (40 kg) · 26 feb 2026' },
           { label: 'Merma total acumulada', val: 736, unit: 'kg', foot: 'Periodo de acumulación: 7 días' },
@@ -117,14 +119,6 @@ const PRODUCTS = {
         ]
       },
       {
-        kind: 'evidence',
-        title: 'Evidencia de muestreo',
-        kicker: 'Soporte documental',
-        sub: 'Registro de muestreo de nibs en caída de despedradora 1 y 2.',
-        imageKey: 'despedradora',
-        caption: 'Tabla de muestreo — Nibs raw de despedradora'
-      },
-      {
         kind: 'conclusion',
         tag: 'Conclusión',
         text: 'La recuperación de nibs en la despedradora es técnicamente viable, operativamente estable y económicamente rentable, con un impacto anual superior a los $42 mil.',
@@ -165,6 +159,8 @@ const PRODUCTS = {
         kind: 'kpis',
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
+        imageKey: 'tostador',
+        imageCaption: 'Ciclos de recuperación — Reducción merma NIBS',
         items: [
           { label: 'Ciclos de recuperación', val: 9, unit: '', foot: 'Desde nov 2025 hasta may 2026' },
           { label: 'Merma total procesada', val: 9396, unit: 'kg', foot: 'Suma de los 9 ciclos registrados' },
@@ -268,14 +264,6 @@ const PRODUCTS = {
         ]
       },
       {
-        kind: 'evidence',
-        title: 'Evidencia de ciclos',
-        kicker: 'Soporte documental',
-        sub: 'Registro de ciclos de recuperación de merma de limpieza del tostador.',
-        imageKey: 'tostador',
-        caption: 'Tabla de ciclos — Reducción merma NIBS'
-      },
-      {
         kind: 'conclusion',
         tag: 'Conclusión',
         text: 'La recuperación de la merma de limpieza del tostador es una oportunidad significativa. El método actual (Bühler) genera paradas de línea y costos adicionales; integrar el proceso a la descascarilladora maximizaría el beneficio económico y la eficiencia global de la planta.',
@@ -316,6 +304,8 @@ const PRODUCTS = {
         kind: 'kpis',
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
+        imageKey: 'licor',
+        imageCaption: 'Registro — Merma de tamizador de licor',
         items: [
           { label: 'Merma promedio por día', val: 200, unit: 'kg', foot: 'Molino de pines · 01 de junio de 2026' },
           { label: 'Recuperación en piloto de laboratorio', val: 30, unit: '%', foot: '35% de grasa de cacao · 1.69% de acidez' },
@@ -358,14 +348,6 @@ const PRODUCTS = {
         }
       },
       {
-        kind: 'evidence',
-        title: 'Evidencia de registro',
-        kicker: 'Soporte documental',
-        sub: 'Registro de planta: merma de molino de pines / licor de cacao, ideas de reproceso y proyecciones.',
-        imageKey: 'licor',
-        caption: 'Tabla de recuperación — merma de tamizador de licor (x30)'
-      },
-      {
         kind: 'conclusion',
         tag: 'Conclusión',
         text: 'El piloto de laboratorio confirma que la merma del tamizador de licor es recuperable: 30% de pasta de cacao, con 35% de grasa y baja acidez (1.69%). El proyecto queda a la espera de la entrega del derretidor y del traslado de la concha de piedra para pasar de piloto a operación en planta.',
@@ -406,6 +388,8 @@ const PRODUCTS = {
         kind: 'kpis',
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
+        imageKey: 'filtroPrensa',
+        imageCaption: 'Recuperación — Licor de filtro prensa',
         items: [
           { label: 'Resultado 2025', val: 1002.8, unit: 'kg', foot: 'Recuperación del periodo 2025' },
           { label: 'Resultado 2026', val: 1412.4, unit: 'kg', foot: 'Recuperación del periodo 2026' },
@@ -435,14 +419,6 @@ const PRODUCTS = {
           ['2026', '1,412.4', '8.7', '12,287.88']
         ],
         totals: ['Total general', '2,415.2', '8.7', '21,012.24']
-      },
-      {
-        kind: 'evidence',
-        title: 'Evidencia de recuperación',
-        kicker: 'Soporte documental',
-        sub: 'Registro consolidado de licor de filtro prensa 2025–2026.',
-        imageKey: 'filtroPrensa',
-        caption: 'Tabla de recuperación — Licor de filtro prensa'
       },
       {
         kind: 'conclusion',
@@ -485,6 +461,8 @@ const PRODUCTS = {
         kind: 'kpis',
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
+        imageKey: 'polvillo',
+        imageCaption: 'Registro — Polvillo de cocoa y torta',
         items: [
           { label: 'Merma ya recuperada', val: 425, unit: 'kg', foot: 'Cocoa y torta — valor $3,400' },
           { label: 'Pendiente por recuperar', val: 4300, unit: 'kg', foot: '172 sacos × 25 kg — al 01/09/2026' },
@@ -540,14 +518,6 @@ const PRODUCTS = {
             { text: 'Temperatura de proceso', status: '100 °C' }
           ]
         }
-      },
-      {
-        kind: 'evidence',
-        title: 'Evidencia de proceso',
-        kicker: 'Soporte documental',
-        sub: 'Registro de recuperación de polvillo de cocoa y pruebas de carga microbiana. Coloca tus capturas en images/polvillo/.',
-        imageKey: 'polvillo',
-        caption: 'Registro de polvillo de cocoa y torta trozada'
       },
       {
         kind: 'conclusion',
