@@ -1,25 +1,25 @@
-/* Datos extraidos de los Excel */
+/* Datos de planta — recuperación de merma */
 const PRODUCTS = {
   despedradora: {
     key: 'despedradora',
     accent: '#00897B',
     tag: 'Etapa 01 \u00b7 Despedradora',
-    name: 'Recuperacion de nibs \u2014 Despedradora',
+    name: 'Recuperación de nibs \u2014 Despedradora',
     tile: {
       num: '01',
-      title: 'Nibs raw en ductos de caida',
-      desc: 'Muestreo en caida de despedradora 1 y 2. Recuperacion mediante limpieza programada en Buhler.',
-      stat1: { val: '736 kg', lbl: 'Merma / 7 dias' },
+      title: 'Nibs raw en ductos de caída',
+      desc: 'Muestreo en caída de despedradora 1 y 2. Recuperación mediante limpieza programada en Bühler.',
+      stat1: { val: '736 kg', lbl: 'Merma / 7 días' },
       stat2: { val: '$42.4K', lbl: 'Impacto anual' }
     },
     slides: [
       {
         kind: 'hero',
         kicker: 'Punto de muestreo',
-        title: 'Recuperacion de nibs en la etapa de despedradora',
-        sub: 'Muestreo de la caida en ductos de despedradora 1 y 2. Se evalua la perdida de nibs por turno y la viabilidad de recuperarlos mediante limpieza programada en el equipo Buhler.',
+        title: 'Recuperación de nibs en la etapa de despedradora',
+        sub: 'Muestreo de la caída en ductos de despedradora 1 y 2. Se evalúa la pérdida de nibs por turno y la viabilidad de recuperarlos mediante limpieza programada en el equipo Bühler.',
         chips: [
-          { txt: 'Caida despedradora 1 y 2 (ducto)' },
+          { txt: 'Caída despedradora 1 y 2 (ducto)' },
           { txt: '26 feb \u2013 01 mar 2026' },
           { txt: '2 turnos de proceso' }
         ]
@@ -29,17 +29,17 @@ const PRODUCTS = {
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
         items: [
-          { label: 'Perdida estimada por dia', val: 90, unit: 'kg / 24h', foot: 'Turno 1 (50 kg) + Turno 2 (40 kg) \u00b7 26 feb 2026' },
-          { label: 'Merma total acumulada', val: 736, unit: 'kg', foot: 'Periodo de acumulacion: 7 dias' },
-          { label: 'Recuperacion proyectada', val: 8832, unit: 'kg / ano', foot: 'A precio de nibs estandar $4.8/kg' },
-          { label: 'Impacto economico anual', val: 42393.6, prefix: '$', unit: '', foot: 'Proyeccion con base en la merma de 7 dias' }
+          { label: 'Pérdida estimada por día', val: 90, unit: 'kg / 24h', foot: 'Turno 1 (50 kg) + Turno 2 (40 kg) \u00b7 26 feb 2026' },
+          { label: 'Merma total acumulada', val: 736, unit: 'kg', foot: 'Periodo de acumulación: 7 días' },
+          { label: 'Recuperación proyectada', val: 8832, unit: 'kg / año', foot: 'A precio de nibs estándar $4.8/kg' },
+          { label: 'Impacto económico anual', val: 42393.6, prefix: '$', unit: '', foot: 'Proyección con base en la merma de 7 días' }
         ]
       },
       {
         kind: 'chart',
-        title: 'Muestreo de perdida por turno',
-        kicker: 'Evolucion',
-        sub: 'Kilogramos de nibs perdidos en la caida de despedradora, por turno de proceso.',
+        title: 'Muestreo de pérdida por turno',
+        kicker: 'Evolución',
+        sub: 'Kilogramos de nibs perdidos en la caída de despedradora, por turno de proceso.',
         chartType: 'grouped-bar',
         labels: ['26 feb', '27 feb', '28 feb', '01 mar'],
         datasets: [
@@ -50,18 +50,18 @@ const PRODUCTS = {
       {
         kind: 'twocol',
         title: 'Ideas y hallazgos',
-        kicker: 'Detalle tecnico',
+        kicker: 'Detalle técnico',
         left: {
           title: 'Ideas planteadas',
           sub: 'Para reprocesar los nibs',
           items: [
-            { text: 'Limpieza programada en Buhler', status: 'Idea aprobada \u00b7 ejecucion 26-02-2026' },
-            { text: 'Incorporar la caida a la descascarilladora', status: 'Alternativa evaluada, sin fecha de ejecucion' }
+            { text: 'Limpieza programada en Bühler', status: 'Idea aprobada \u00b7 ejecución 26-02-2026' },
+            { text: 'Incorporar la caída a la descascarilladora', status: 'Alternativa evaluada, sin fecha de ejecución' }
           ]
         },
         right: {
           title: 'Condiciones del muestreo',
-          sub: 'Precio y proyeccion',
+          sub: 'Precio y proyección',
           items: [
             { text: 'Precio de referencia del kg de nibs', status: '$9.00 durante el muestreo de febrero' },
             { text: 'Monto recuperado en los 2 turnos', status: '$810 + $711 = $1,521' },
@@ -74,54 +74,54 @@ const PRODUCTS = {
         title: 'Registro de muestreo',
         kicker: 'Historial',
         sub: 'Kilogramos de nibs perdidos por turno, fecha por fecha.',
-        headers: ['Fecha', 'Turno 1 (kg)', 'Turno 2 (kg)', 'Total dia (kg)', 'Observacion'],
+        headers: ['Fecha', 'Turno 1 (kg)', 'Turno 2 (kg)', 'Total día (kg)', 'Observación'],
         rows: [
-          ['26 feb 2026', '50', '40', '90', 'Estimado \u00b7 limpieza Buhler'],
+          ['26 feb 2026', '50', '40', '90', 'Estimado \u00b7 limpieza Bühler'],
           ['27 feb 2026', '34', '45', '79', 'Estimado \u00b7 descascarilladora'],
           ['28 feb 2026', '25', '48', '73', '\u2014'],
           ['01 mar 2026', '35', '43', '78', '\u2014']
         ],
-        totals: ['7 dias', '\u2014', '\u2014', '736 kg', 'Merma total obtenida']
+        totals: ['7 días', '\u2014', '\u2014', '736 kg', 'Merma total obtenida']
       },
       {
         kind: 'triad',
         title: 'Impacto en el proceso',
-        kicker: 'Evaluacion',
-        sub: 'La merma generada en la despedradora contiene un volumen significativo de nibs recuperables, con alto impacto economico anual.',
+        kicker: 'Evaluación',
+        sub: 'La merma generada en la despedradora contiene un volumen significativo de nibs recuperables, con alto impacto económico anual.',
         cols: [
           {
             title: 'Eficiencia productiva',
             items: [
-              'Recuperacion de nibs que antes se gestionaban como perdida.',
+              'Recuperación de nibs que antes se gestionaban como pérdida.',
               'Incremento del rendimiento global sin modificar capacidad instalada.',
               'Mejor aprovechamiento de la materia prima procesada.'
             ]
           },
           {
-            title: 'Operacion continua',
+            title: 'Operación continua',
             items: [
-              'La recuperacion se realiza dentro del flujo operativo normal.',
-              'No genera paradas de linea ni afecta la productividad.',
+              'La recuperación se realiza dentro del flujo operativo normal.',
+              'No genera paradas de línea ni afecta la productividad.',
               'Uso controlado de recursos sin equipos adicionales complejos.'
             ]
           },
           {
             title: 'Calidad e inocuidad',
             items: [
-              'Los nibs provienen de una etapa critica de separacion.',
-              'Se mantiene la trazabilidad y segregacion del material.',
-              'Pasa por etapa posterior de reduccion de carga microbiologica.'
+              'Los nibs provienen de una etapa crítica de separación.',
+              'Se mantiene la trazabilidad y segregación del material.',
+              'Pasa por etapa posterior de reducción de carga microbiológica.'
             ]
           }
         ]
       },
       {
         kind: 'conclusion',
-        tag: 'Conclusion',
-        text: 'La recuperacion de nibs en la despedradora es tecnicamente viable, operativamente estable y economicamente rentable, con un impacto anual superior a los $42 mil.',
+        tag: 'Conclusión',
+        text: 'La recuperación de nibs en la despedradora es técnicamente viable, operativamente estable y económicamente rentable, con un impacto anual superior a los $42 mil.',
         chips: [
-          { lbl: 'Merma evaluada', val: '736 kg / 7 dias' },
-          { lbl: 'Recuperacion proyectada', val: '8,832 kg/ano' },
+          { lbl: 'Merma evaluada', val: '736 kg / 7 días' },
+          { lbl: 'Recuperación proyectada', val: '8,832 kg/año' },
           { lbl: 'Impacto anual', val: '$42,393.6' }
         ]
       }
@@ -131,20 +131,20 @@ const PRODUCTS = {
     key: 'tostador',
     accent: '#F9A825',
     tag: 'Etapa 02 \u00b7 Tostador',
-    name: 'Reduccion de merma NIBS \u2014 Limpieza de tostador',
+    name: 'Reducción de merma NIBS \u2014 Limpieza de tostador',
     tile: {
       num: '02',
       title: 'Merma de limpieza del tostador',
-      desc: 'Acopio semanal de merma de limpieza. Recuperacion en Buhler con 9 ciclos evaluados y propuestas de mejora.',
-      stat1: { val: '46.3%', lbl: 'Recuperacion global' },
-      stat2: { val: '$100.8K', lbl: 'Proyeccion anual' }
+      desc: 'Acopio semanal de merma de limpieza. Recuperación en Bühler con 9 ciclos evaluados y propuestas de mejora.',
+      stat1: { val: '46.3%', lbl: 'Recuperación global' },
+      stat2: { val: '$100.8K', lbl: 'Proyección anual' }
     },
     slides: [
       {
         kind: 'hero',
-        kicker: 'Punto de recuperacion',
-        title: 'Recuperacion de merma de limpieza del tostador',
-        sub: 'Evaluacion de la merma generada durante la limpieza del tostador (controladores de temperatura y tolva de descarga). Se cuantifica el impacto economico y se proponen mejoras al metodo actual (Buhler).',
+        kicker: 'Punto de recuperación',
+        title: 'Recuperación de merma de limpieza del tostador',
+        sub: 'Evaluación de la merma generada durante la limpieza del tostador (controladores de temperatura y tolva de descarga). Se cuantifica el impacto económico y se proponen mejoras al método actual (Bühler).',
         chips: [
           { txt: 'Limpieza de tostador' },
           { txt: 'Nov 2025 \u2013 May 2026' },
@@ -156,30 +156,30 @@ const PRODUCTS = {
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
         items: [
-          { label: 'Ciclos de recuperacion', val: 9, unit: '', foot: 'Desde nov 2025 hasta may 2026' },
+          { label: 'Ciclos de recuperación', val: 9, unit: '', foot: 'Desde nov 2025 hasta may 2026' },
           { label: 'Merma total procesada', val: 9396, unit: 'kg', foot: 'Suma de los 9 ciclos registrados' },
           { label: 'Nibs recuperados (global)', val: 4345.5, unit: 'kg', foot: 'Eficiencia global 46.3%' },
-          { label: 'Proyeccion anual', val: 100800, prefix: '$', unit: '', foot: 'Con base en el ciclo de mayo 2026' }
+          { label: 'Proyección anual', val: 100800, prefix: '$', unit: '', foot: 'Con base en el ciclo de mayo 2026' }
         ]
       },
       {
         kind: 'chart',
-        title: 'Evolucion de recuperacion por ciclo',
+        title: 'Evolución de recuperación por ciclo',
         kicker: 'Historial',
-        sub: 'Kilogramos de merma vs. nibs recuperados y % de recuperacion en cada ciclo.',
+        sub: 'Kilogramos de merma vs. nibs recuperados y % de recuperación en cada ciclo.',
         chartType: 'combo',
         labels: ['07-10 nov', '16 nov', '23 nov', '29 nov', '10 dic', '18 dic', '29 dic', '27 feb', '04 may'],
         datasets: [
           { label: 'Merma (kg)', data: [622.5, 480.3, 611.8, 576.8, 1206.7, 896.8, 894.9, 1026.6, 3080], color: '#BDBDBD', type: 'bar' },
           { label: 'Nibs recuperados (kg)', data: [75.9, 170.2, 251.5, 168.5, 443.6, 474, 405.8, 606, 1750], color: '#00897B', type: 'bar' },
-          { label: '% Recuperacion', data: [12.2, 35.4, 41.1, 29.2, 36.7, 52.9, 45.3, 59.0, 56.8], color: '#F9A825', type: 'line' }
+          { label: '% Recuperación', data: [12.2, 35.4, 41.1, 29.2, 36.7, 52.9, 45.3, 59.0, 56.8], color: '#F9A825', type: 'line' }
         ]
       },
       {
         kind: 'table',
-        title: 'Registro de ciclos de recuperacion',
+        title: 'Registro de ciclos de recuperación',
         kicker: 'Detalle',
-        sub: 'Datos de cada ciclo de limpieza y recuperacion en Buhler.',
+        sub: 'Datos de cada ciclo de limpieza y recuperación en Bühler.',
         headers: ['Fecha', 'Merma (kg)', 'Nibs (kg)', '% Recup.', 'Precio $/kg', 'Monto $', 'Operarios'],
         rows: [
           ['07-10 nov 2025', '622.5', '75.9', '12.2%', '14', '1,062.6', '2'],
@@ -196,31 +196,31 @@ const PRODUCTS = {
       },
       {
         kind: 'triad',
-        title: 'Impactos negativos del metodo actual',
+        title: 'Impactos negativos del método actual',
         kicker: 'Riesgos operativos',
-        sub: 'El uso del equipo Buhler para recuperar la merma genera tres tipos de impacto identificados por el equipo.',
+        sub: 'El uso del equipo Bühler para recuperar la merma genera tres tipos de impacto identificados por el equipo.',
         cols: [
           {
-            title: 'Parada de linea productiva',
+            title: 'Parada de línea productiva',
             items: [
-              'Se detiene la linea de torta de cacao reducida en grasa.',
-              'Perdida de produccion estimada: 20 TM.',
-              'Impacto economico: \u2248 $80,000 (20,000 kg \u00d7 $4/kg).'
+              'Se detiene la línea de torta de cacao reducida en grasa.',
+              'Pérdida de producción estimada: 20 TM.',
+              'Impacto económico: \u2248 $80,000 (20,000 kg \u00d7 $4/kg).'
             ]
           },
           {
-            title: 'Uso de equipo Buhler',
+            title: 'Uso de equipo Bühler',
             items: [
-              'Requiere operacion dedicada de 2 operarios.',
+              'Requiere operación dedicada de 2 operarios.',
               'Pago regular de 8 horas + horas extra diurnas.',
               'Incremento del costo operativo no planificado.'
             ]
           },
           {
-            title: 'Perdida de material',
+            title: 'Pérdida de material',
             items: [
-              'Parte de la granilla aun se pierde en el Buhler.',
-              'La eficiencia real queda limitada por el metodo.',
+              'Parte de la granilla aún se pierde en el Bühler.',
+              'La eficiencia real queda limitada por el método.',
               'Margen de mejora identificado por el equipo.'
             ]
           }
@@ -230,41 +230,41 @@ const PRODUCTS = {
         kind: 'triad',
         title: 'Propuestas de mejora',
         kicker: 'Siguiente paso',
-        sub: 'Tres lineas de mejora planteadas por mantenimiento, produccion y calidad.',
+        sub: 'Tres líneas de mejora planteadas por mantenimiento, producción y calidad.',
         cols: [
           {
-            title: 'Integracion del proceso',
+            title: 'Integración del proceso',
             items: [
               'Incorporar la limpieza del tostador directamente a la descascarilladora.',
               'Eliminar traslados y reprocesos innecesarios.'
             ]
           },
           {
-            title: 'Eliminacion de paradas',
+            title: 'Eliminación de paradas',
             items: [
-              'No utilizar el equipo Buhler para esta recuperacion.',
-              'Evitar detencion de la linea de torta reducida en grasa.',
-              'Reduccion inmediata de perdidas por produccion no realizada.'
+              'No utilizar el equipo Bühler para esta recuperación.',
+              'Evitar detención de la línea de torta reducida en grasa.',
+              'Reducción inmediata de pérdidas por producción no realizada.'
             ]
           },
           {
-            title: 'Optimizacion del rendimiento',
+            title: 'Optimización del rendimiento',
             items: [
               'Mejor aprovechamiento de la granilla presente en la merma.',
-              'Incremento del % de recuperacion respecto al metodo actual.',
-              'Proceso mas continuo y controlado.'
+              'Incremento del % de recuperación respecto al método actual.',
+              'Proceso más continuo y controlado.'
             ]
           }
         ]
       },
       {
         kind: 'conclusion',
-        tag: 'Conclusion',
-        text: 'La recuperacion de la merma de limpieza del tostador es una oportunidad significativa. El metodo actual (Buhler) genera paradas de linea y costos adicionales; integrar el proceso a la descascarilladora maximizaria el beneficio economico y la eficiencia global de la planta.',
+        tag: 'Conclusión',
+        text: 'La recuperación de la merma de limpieza del tostador es una oportunidad significativa. El método actual (Bühler) genera paradas de línea y costos adicionales; integrar el proceso a la descascarilladora maximizaría el beneficio económico y la eficiencia global de la planta.',
         chips: [
           { lbl: 'Ciclos evaluados', val: '9' },
-          { lbl: 'Recuperacion global', val: '46.3%' },
-          { lbl: 'Proyeccion anual', val: '$100,800' }
+          { lbl: 'Recuperación global', val: '46.3%' },
+          { lbl: 'Proyección anual', val: '$100,800' }
         ]
       }
     ]
@@ -277,18 +277,18 @@ const PRODUCTS = {
     tile: {
       num: '03',
       title: 'Merma del molino de pines',
-      desc: 'Reprocesamiento de pasta de cacao via derretidor. Piloto de laboratorio ya realizado con 30% de recuperacion.',
-      stat1: { val: '200 kg', lbl: 'Merma promedio / dia' },
-      stat2: { val: '30%', lbl: 'Recuperacion piloto' }
+      desc: 'Reprocesamiento de pasta de cacao vía derretidor. Piloto de laboratorio ya realizado con 30% de recuperación.',
+      stat1: { val: '200 kg', lbl: 'Merma promedio / día' },
+      stat2: { val: '30%', lbl: 'Recuperación piloto' }
     },
     slides: [
       {
         kind: 'hero',
-        kicker: 'Punto de recuperacion',
+        kicker: 'Punto de recuperación',
         title: 'Merma del tamizador de licor de cacao',
-        sub: 'Seguimiento de la merma diaria generada en el molino de pines (tamizador de licor) y evaluacion de dos alternativas para recuperar la pasta de cacao contenida en ella.',
+        sub: 'Seguimiento de la merma diaria generada en el molino de pines (tamizador de licor) y evaluación de dos alternativas para recuperar la pasta de cacao contenida en ella.',
         chips: [
-          { txt: 'Molino de pines \u00b7 linea de licor' },
+          { txt: 'Molino de pines \u00b7 línea de licor' },
           { txt: '01 de junio de 2026' },
           { txt: 'Turnos 1 y 2' }
         ]
@@ -298,27 +298,27 @@ const PRODUCTS = {
         title: 'Resumen del proyecto',
         kicker: 'Cifras clave',
         items: [
-          { label: 'Merma promedio por dia', val: 200, unit: 'kg', foot: 'Molino de pines \u00b7 01 de junio de 2026' },
-          { label: 'Recuperacion en piloto de laboratorio', val: 30, unit: '%', foot: '35% de grasa de cacao \u00b7 1.69% de acidez' },
+          { label: 'Merma promedio por día', val: 200, unit: 'kg', foot: 'Molino de pines \u00b7 01 de junio de 2026' },
+          { label: 'Recuperación en piloto de laboratorio', val: 30, unit: '%', foot: '35% de grasa de cacao \u00b7 1.69% de acidez' },
           { label: 'Monto recuperado en el piloto', val: 1120, prefix: '$', unit: '', foot: 'Refinado en refinadora de laboratorio' },
-          { label: 'Proyeccion anual (resultado real)', val: 23506, prefix: '$', unit: '', foot: 'A partir del resultado de laboratorio' }
+          { label: 'Proyección anual (resultado real)', val: 23506, prefix: '$', unit: '', foot: 'A partir del resultado de laboratorio' }
         ]
       },
       {
         kind: 'chart',
         title: 'Escenario inicial vs. resultado de piloto',
         kicker: 'Comparativo',
-        sub: 'La proyeccion inicial asumia 60 kg de pasta recuperada cada 24 horas; el piloto de laboratorio midio un resultado real.',
+        sub: 'La proyección inicial asumía 60 kg de pasta recuperada cada 24 horas; el piloto de laboratorio midió un resultado real.',
         chartType: 'bar',
         labels: ['Escenario inicial (proyectado)', 'Piloto de laboratorio (real)'],
         datasets: [
-          { label: 'Proyeccion de recuperacion anual ($)', data: [122640, 23506], color: '#6D4C41' }
+          { label: 'Proyección de recuperación anual ($)', data: [122640, 23506], color: '#6D4C41' }
         ]
       },
       {
         kind: 'twocol',
         title: 'Ideas y resultado del piloto',
-        kicker: 'Detalle tecnico',
+        kicker: 'Detalle técnico',
         left: {
           title: 'Ideas planteadas',
           sub: 'Para reprocesar la merma',
@@ -331,7 +331,7 @@ const PRODUCTS = {
           title: 'Resultado del piloto de laboratorio',
           sub: 'Refinado en refinadora de laboratorio',
           items: [
-            { text: 'Recuperacion de pasta de cacao', status: '30%' },
+            { text: 'Recuperación de pasta de cacao', status: '30%' },
             { text: 'Grasa de cacao en lo recuperado', status: '35%' },
             { text: 'Acidez de la pasta recuperada', status: '1.69%' },
             { text: 'Precio de referencia del licor', status: '$5.6 / kg' }
@@ -340,12 +340,12 @@ const PRODUCTS = {
       },
       {
         kind: 'conclusion',
-        tag: 'Conclusion',
-        text: 'El piloto de laboratorio confirma que la merma del tamizador de licor es recuperable: 30% de pasta de cacao, con 35% de grasa y baja acidez (1.69%). El proyecto queda a la espera de la entrega del derretidor y del traslado de la concha de piedra para pasar de piloto a operacion en planta.',
+        tag: 'Conclusión',
+        text: 'El piloto de laboratorio confirma que la merma del tamizador de licor es recuperable: 30% de pasta de cacao, con 35% de grasa y baja acidez (1.69%). El proyecto queda a la espera de la entrega del derretidor y del traslado de la concha de piedra para pasar de piloto a operación en planta.',
         chips: [
-          { lbl: 'Merma promedio', val: '200 kg/dia' },
-          { lbl: 'Recuperacion piloto', val: '30%' },
-          { lbl: 'Proyeccion anual (real)', val: '$23,506' }
+          { lbl: 'Merma promedio', val: '200 kg/día' },
+          { lbl: 'Recuperación piloto', val: '30%' },
+          { lbl: 'Proyección anual (real)', val: '$23,506' }
         ]
       }
     ]
