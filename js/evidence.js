@@ -17,7 +17,7 @@ const EVIDENCE = {
   filtroPrensa: 'images/licor prensa/prensa.png',
   filtroPrensa2: 'images/licor prensa/prensa -2.png',
 
-  // Polvillo de cocoa (crea la carpeta images/polvillo/ y pon las capturas)
+  // Polvillo de cocoa (crea images/polvillo/ y pon las capturas)
   polvillo: 'images/polvillo/polvillo.png',
   polvillo2: 'images/polvillo/polvillo-2.png'
 };
