@@ -16,20 +16,11 @@ const App = (() => {
   const playIco = document.getElementById('pPlayIco');
 
   const DURATIONS = {
-    hero: 4500,
-    kpis: 5500,
-    chart: 6500,
-    twocol: 5800,
-    triad: 6200,
-    table: 6800,
-    conclusion: 999999
+    hero: 4500, kpis: 5500, chart: 6500, twocol: 5800, triad: 6200, table: 6800, conclusion: 999999
   };
 
   function fmt(v, dec, prefix) {
-    const s = Number(v).toLocaleString('en-US', {
-      minimumFractionDigits: dec,
-      maximumFractionDigits: dec
-    });
+    const s = Number(v).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
     return (prefix || '') + s;
   }
 
@@ -52,9 +43,7 @@ const App = (() => {
     lightbulb: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>'
   };
 
-  function icon(name) {
-    return ICONS[name] || '';
-  }
+  function icon(name) { return ICONS[name] || ''; }
 
   function buildSelector() {
     const wrap = document.getElementById('cardsWrap');
@@ -70,17 +59,10 @@ const App = (() => {
         <h2 class="card-title">${t.title}</h2>
         <p class="card-desc">${t.desc}</p>
         <div class="card-stats">
-          <div>
-            <div class="card-stat-val">${t.stat1.val}</div>
-            <div class="card-stat-lbl">${t.stat1.lbl}</div>
-          </div>
-          <div>
-            <div class="card-stat-val">${t.stat2.val}</div>
-            <div class="card-stat-lbl">${t.stat2.lbl}</div>
-          </div>
+          <div><div class="card-stat-val">${t.stat1.val}</div><div class="card-stat-lbl">${t.stat1.lbl}</div></div>
+          <div><div class="card-stat-val">${t.stat2.val}</div><div class="card-stat-lbl">${t.stat2.lbl}</div></div>
         </div>
-        <div class="card-cta">Ver presentacion ${icon('arrow_forward')}</div>
-      `;
+        <div class="card-cta">Ver resultados ${icon('arrow_forward')}</div>`;
       wrap.appendChild(card);
     });
   }
@@ -121,25 +103,17 @@ const App = (() => {
   }
 
   function updateSegs() {
-    const segs = segsWrap.querySelectorAll('.p-seg');
-    segs.forEach((seg, i) => {
+    segsWrap.querySelectorAll('.p-seg').forEach((seg, i) => {
       seg.classList.remove('active', 'done');
       const fill = seg.querySelector('.p-seg-fill');
       fill.style.transition = 'none';
       if (i < idx) seg.classList.add('done');
-      else if (i === idx) {
-        seg.classList.add('active');
-        fill.style.width = '0%';
-      } else {
-        fill.style.width = '0%';
-      }
+      else if (i === idx) { seg.classList.add('active'); fill.style.width = '0%'; }
+      else fill.style.width = '0%';
     });
   }
 
-  function stopSeg() {
-    if (segTimer) cancelAnimationFrame(segTimer);
-    segTimer = null;
-  }
+  function stopSeg() { if (segTimer) cancelAnimationFrame(segTimer); segTimer = null; }
 
   function runSeg(duration) {
     stopSeg();
@@ -148,19 +122,11 @@ const App = (() => {
     segRemaining = duration;
     const activeFill = segsWrap.querySelector('.p-seg.active .p-seg-fill');
     function frame(now) {
-      if (paused) {
-        segStart = now - (duration - segRemaining);
-        segTimer = requestAnimationFrame(frame);
-        return;
-      }
+      if (paused) { segStart = now - (duration - segRemaining); segTimer = requestAnimationFrame(frame); return; }
       const elapsed = now - segStart;
       segRemaining = Math.max(0, duration - elapsed);
-      const pct = Math.min(100, (elapsed / duration) * 100);
-      if (activeFill) activeFill.style.width = pct + '%';
-      if (elapsed >= duration) {
-        if (autoplay) nextSlide(true);
-        return;
-      }
+      if (activeFill) activeFill.style.width = Math.min(100, (elapsed / duration) * 100) + '%';
+      if (elapsed >= duration) { if (autoplay) nextSlide(true); return; }
       segTimer = requestAnimationFrame(frame);
     }
     segTimer = requestAnimationFrame(frame);
@@ -181,31 +147,18 @@ const App = (() => {
     runSeg(DURATIONS[slide.kind] || 5000);
   }
 
-  function nextSlide() {
-    if (idx >= slides.length - 1) { stopSeg(); return; }
-    goTo(idx + 1);
-  }
-  function prevSlide() {
-    stopSeg();
-    goTo(Math.max(0, idx - 1));
-  }
+  function nextSlide() { if (idx >= slides.length - 1) { stopSeg(); return; } goTo(idx + 1); }
+  function prevSlide() { stopSeg(); goTo(Math.max(0, idx - 1)); }
 
   function toggleAutoplay() {
     autoplay = !autoplay;
     paused = !autoplay;
     playIco.innerHTML = autoplay ? icon('pause') : icon('play');
-    if (autoplay) {
-      const slide = slides[idx];
-      runSeg(DURATIONS[slide.kind] || 5000);
-    } else {
-      stopSeg();
-    }
+    if (autoplay) runSeg(DURATIONS[slides[idx].kind] || 5000);
+    else stopSeg();
   }
 
-  function stopAndGo(i) {
-    stopSeg();
-    goTo(i);
-  }
+  function stopAndGo(i) { stopSeg(); goTo(i); }
 
   document.addEventListener('keydown', e => {
     if (!document.getElementById('presentation').classList.contains('show')) return;
@@ -216,9 +169,7 @@ const App = (() => {
   });
 
   let touchX = null;
-  document.getElementById('presentation').addEventListener('touchstart', e => {
-    touchX = e.touches[0].clientX;
-  });
+  document.getElementById('presentation').addEventListener('touchstart', e => { touchX = e.touches[0].clientX; });
   document.getElementById('presentation').addEventListener('touchend', e => {
     if (touchX === null) return;
     const dx = e.changedTouches[0].clientX - touchX;
@@ -239,125 +190,66 @@ const App = (() => {
   }
 
   function tplHero(s) {
-    return `
-      <div class="kicker reveal" style="transition-delay:.05s">${s.kicker}</div>
+    return `<div class="kicker reveal" style="transition-delay:.05s">${s.kicker}</div>
       <h2 class="slide-h reveal" style="transition-delay:.12s">${s.title}</h2>
       <p class="slide-p reveal" style="transition-delay:.22s">${s.sub}</p>
-      <div class="hero-chips">
-        ${s.chips.map((c, i) => `<span class="chip reveal" style="transition-delay:${0.32 + i * 0.07}s">${c.txt}</span>`).join('')}
-      </div>
-      <button class="btn-filled reveal" style="transition-delay:.6s" onclick="App.stopAndGo(1)">
-        Ver resumen ejecutivo ${icon('arrow_forward')}
-      </button>
-    `;
+      <div class="hero-chips">${s.chips.map((c, i) => `<span class="chip reveal" style="transition-delay:${0.32 + i * 0.07}s">${c.txt}</span>`).join('')}</div>
+      <button class="btn-filled reveal" style="transition-delay:.6s" onclick="App.stopAndGo(1)">Ver resumen ejecutivo ${icon('arrow_forward')}</button>`;
   }
 
   function tplKpis(s) {
-    return `
-      <div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
+    return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
       <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
-      <div class="kpi-grid">
-        ${s.items.map((k, i) => `
-          <div class="kpi-card reveal" style="transition-delay:${0.18 + i * 0.08}s">
+      <div class="kpi-grid">${s.items.map((k, i) => `<div class="kpi-card reveal" style="transition-delay:${0.18 + i * 0.08}s">
             <div class="kpi-ico">${icon(['scale','inventory','trending','payments'][i] || 'insights')}</div>
-            <div class="kpi-val" data-target="${k.val}" data-dec="${k.dec ?? 0}" data-prefix="${k.prefix || ''}">
-              0<span class="u">${k.unit || ''}</span>
-            </div>
-            <div class="kpi-lbl">${k.label}</div>
-            <div class="kpi-foot">${k.foot}</div>
-          </div>
-        `).join('')}
-      </div>
-    `;
+            <div class="kpi-val" data-target="${k.val}" data-dec="${k.dec ?? 0}" data-prefix="${k.prefix || ''}">0<span class="u">${k.unit || ''}</span></div>
+            <div class="kpi-lbl">${k.label}</div><div class="kpi-foot">${k.foot}</div></div>`).join('')}</div>`;
   }
 
   function tplChart(s) {
-    return `
-      <div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
+    return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
       <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
       <p class="slide-p reveal" style="transition-delay:.18s">${s.sub}</p>
-      <div class="chart-legend reveal" style="transition-delay:.24s">
-        ${s.datasets.map(d => `<span class="leg"><i style="background:${d.color}"></i>${d.label}</span>`).join('')}
-      </div>
-      <div class="chart-box reveal" style="transition-delay:.3s"><canvas id="mainChart"></canvas></div>
-    `;
+      <div class="chart-legend reveal" style="transition-delay:.24s">${s.datasets.map(d => `<span class="leg"><i style="background:${d.color}"></i>${d.label}</span>`).join('')}</div>
+      <div class="chart-box reveal" style="transition-delay:.3s"><canvas id="mainChart"></canvas></div>`;
   }
 
   function tplTwocol(s) {
     function block(b, delay) {
-      return `
-        <div class="info-card reveal" style="transition-delay:${delay}s">
-          <div class="info-head">
-            <div class="info-ico">${icon(b.title.includes('Ideas') ? 'lightbulb' : 'science')}</div>
-            <div><h4>${b.title}</h4><div class="sub">${b.sub}</div></div>
-          </div>
-          <ul class="info-list">
-            ${b.items.map(it => `<li><b>${it.text}</b><span class="status">${it.status}</span></li>`).join('')}
-          </ul>
-        </div>`;
+      return `<div class="info-card reveal" style="transition-delay:${delay}s"><div class="info-head"><div class="info-ico">${icon(b.title.includes('Ideas') ? 'lightbulb' : 'science')}</div>
+            <div><h4>${b.title}</h4><div class="sub">${b.sub}</div></div></div>
+          <ul class="info-list">${b.items.map(it => `<li><b>${it.text}</b><span class="status">${it.status}</span></li>`).join('')}</ul></div>`;
     }
-    return `
-      <div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
-      <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
-      <div class="col-grid">
-        ${block(s.left, 0.2)}
-        ${block(s.right, 0.32)}
-      </div>
-    `;
+    return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div><h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
+      <div class="col-grid">${block(s.left, 0.2)}${block(s.right, 0.32)}</div>`;
   }
 
   function tplTriad(s) {
-    return `
-      <div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
-      <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
+    return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div><h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
       <p class="slide-p reveal" style="transition-delay:.18s">${s.sub}</p>
-      <div class="tri-grid">
-        ${s.cols.map((c, i) => `
-          <div class="info-card reveal" style="transition-delay:${0.26 + i * 0.1}s">
-            <div class="info-head">
-              <div class="info-ico">${icon('insights')}</div>
-              <div><h4>${c.title}</h4></div>
-            </div>
-            <ul class="info-list">${c.items.map(t => `<li>${t}</li>`).join('')}</ul>
-          </div>
-        `).join('')}
-      </div>
-    `;
+      <div class="tri-grid">${s.cols.map((c, i) => `<div class="info-card reveal" style="transition-delay:${0.26 + i * 0.1}s">
+            <div class="info-head"><div class="info-ico">${icon('insights')}</div><div><h4>${c.title}</h4></div></div>
+            <ul class="info-list">${c.items.map(t => `<li>${t}</li>`).join('')}</ul></div>`).join('')}</div>`;
   }
 
   function tplTable(s) {
-    return `
-      <div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
-      <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
+    return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div><h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
       <p class="slide-p reveal" style="transition-delay:.18s">${s.sub}</p>
-      <div class="table-box reveal" style="transition-delay:.26s">
-        <div class="tbl-scroll">
-          <table class="data">
+      <div class="table-box reveal" style="transition-delay:.26s"><div class="tbl-scroll"><table class="data">
             <thead><tr>${s.headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
-            <tbody>
-              ${s.rows.map((r, i) => `<tr style="transition-delay:${0.08 + i * 0.05}s">${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}
+            <tbody>${s.rows.map((r, i) => `<tr style="transition-delay:${0.08 + i * 0.05}s">${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}
               ${s.totals ? `<tr class="totals" style="transition-delay:${0.15 + s.rows.length * 0.05}s">${s.totals.map(c => `<td>${c}</td>`).join('')}</tr>` : ''}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    `;
+            </tbody></table></div></div>`;
   }
 
   function tplConclusion(s) {
-    return `
-      <div class="concl reveal" style="transition-delay:.05s">
-        <span class="concl-tag">${icon('flag')} ${s.tag}</span>
+    return `<div class="concl reveal" style="transition-delay:.05s"><span class="concl-tag">${icon('flag')} ${s.tag}</span>
         <p class="concl-text">${s.text}</p>
-        <div class="concl-chips">
-          ${s.chips.map(c => `<span class="concl-chip">${c.lbl}: <b>${c.val}</b></span>`).join('')}
-        </div>
+        <div class="concl-chips">${s.chips.map(c => `<span class="concl-chip">${c.lbl}: <b>${c.val}</b></span>`).join('')}</div>
         <div class="concl-actions">
           <button class="btn-filled" onclick="App.stopAndGo(0)">${icon('replay')} Volver a ver</button>
           <button class="btn-outlined" onclick="App.backToSelector()">${icon('apps')} Otro proyecto</button>
-        </div>
-      </div>
-    `;
+        </div></div>`;
   }
 
   function postRender(s, el) {
@@ -371,19 +263,15 @@ const App = (() => {
         animateCount(v, target, dec, prefix, unitHtml);
       });
     }
-    if (s.kind === 'chart') {
-      requestAnimationFrame(() => buildChart(s));
-    }
+    if (s.kind === 'chart') requestAnimationFrame(() => buildChart(s));
   }
 
   function animateCount(el, target, dec, prefix, unitHtml) {
-    const dur = 1300;
-    const start = performance.now();
+    const dur = 1300, start = performance.now();
     function frame(now) {
       const t = Math.min(1, (now - start) / dur);
       const eased = 1 - Math.pow(1 - t, 3);
-      const val = target * eased;
-      el.innerHTML = fmt(val, dec, prefix) + unitHtml;
+      el.innerHTML = fmt(target * eased, dec, prefix) + unitHtml;
       if (t < 1) requestAnimationFrame(frame);
       else el.innerHTML = fmt(target, dec, prefix) + unitHtml;
     }
@@ -394,103 +282,32 @@ const App = (() => {
     const canvas = document.getElementById('mainChart');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const gridColor = 'rgba(0,0,0,.06)';
-    const textColor = '#7A736C';
-
+    const gridColor = 'rgba(0,0,0,.06)', textColor = '#7A736C';
     let datasets;
     const scales = {
-      x: {
-        grid: { color: gridColor },
-        ticks: { color: textColor, font: { family: 'Roboto Mono', size: 11 } }
-      },
-      y: {
-        grid: { color: gridColor },
-        ticks: { color: textColor, font: { family: 'Roboto Mono', size: 11 } },
-        beginAtZero: true
-      }
+      x: { grid: { color: gridColor }, ticks: { color: textColor, font: { family: 'Roboto Mono', size: 11 } } },
+      y: { grid: { color: gridColor }, ticks: { color: textColor, font: { family: 'Roboto Mono', size: 11 } }, beginAtZero: true }
     };
-
     if (s.chartType === 'grouped-bar' || s.chartType === 'bar') {
-      datasets = s.datasets.map(d => ({
-        type: 'bar',
-        label: d.label,
-        data: d.data,
-        backgroundColor: d.color,
-        borderRadius: 4,
-        maxBarThickness: 42
-      }));
+      datasets = s.datasets.map(d => ({ type: 'bar', label: d.label, data: d.data, backgroundColor: d.color, borderRadius: 4, maxBarThickness: 42 }));
     } else if (s.chartType === 'combo') {
-      datasets = s.datasets.map(d => {
-        if (d.type === 'line') {
-          return {
-            type: 'line',
-            label: d.label,
-            data: d.data,
-            borderColor: d.color,
-            backgroundColor: d.color,
-            yAxisID: 'y1',
-            tension: 0.3,
-            borderWidth: 2.5,
-            pointRadius: 3.5,
-            pointBackgroundColor: d.color
-          };
-        }
-        return {
-          type: 'bar',
-          label: d.label,
-          data: d.data,
-          backgroundColor: d.color,
-          borderRadius: 3,
-          maxBarThickness: 28
-        };
-      });
-      scales.y1 = {
-        position: 'right',
-        grid: { drawOnChartArea: false },
-        ticks: {
-          color: '#F9A825',
-          font: { family: 'Roboto Mono', size: 11 },
-          callback: v => v + '%'
-        },
-        min: 0,
-        max: 70
-      };
+      datasets = s.datasets.map(d => d.type === 'line'
+        ? { type: 'line', label: d.label, data: d.data, borderColor: d.color, backgroundColor: d.color, yAxisID: 'y1', tension: 0.3, borderWidth: 2.5, pointRadius: 3.5, pointBackgroundColor: d.color }
+        : { type: 'bar', label: d.label, data: d.data, backgroundColor: d.color, borderRadius: 3, maxBarThickness: 28 });
+      scales.y1 = { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#F9A825', font: { family: 'Roboto Mono', size: 11 }, callback: v => v + '%' }, min: 0, max: 70 };
     }
-
     chart = new Chart(ctx, {
-      type: 'bar',
-      data: { labels: s.labels, datasets },
+      type: 'bar', data: { labels: s.labels, datasets },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
+        responsive: true, maintainAspectRatio: false,
         animation: { duration: 1000, easing: 'easeOutCubic' },
         interaction: { mode: 'index', intersect: false },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            backgroundColor: '#1C1B1A',
-            titleColor: '#FFFBFE',
-            bodyColor: '#CDC5BC',
-            borderColor: '#4A4540',
-            borderWidth: 1,
-            padding: 10,
-            titleFont: { family: 'Roboto', weight: 500 },
-            bodyFont: { family: 'Roboto Mono' }
-          }
-        },
+        plugins: { legend: { display: false }, tooltip: { backgroundColor: '#1C1B1A', titleColor: '#FFFBFE', bodyColor: '#CDC5BC', borderColor: '#4A4540', borderWidth: 1, padding: 10, titleFont: { family: 'Roboto', weight: 500 }, bodyFont: { family: 'Roboto Mono' } } },
         scales
       }
     });
   }
 
   buildSelector();
-
-  return {
-    open,
-    backToSelector,
-    nextSlide,
-    prevSlide,
-    toggleAutoplay,
-    stopAndGo
-  };
+  return { open, backToSelector, nextSlide, prevSlide, toggleAutoplay, stopAndGo };
 })();
