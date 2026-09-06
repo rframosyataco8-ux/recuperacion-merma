@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperación de Merma · Planta de Cacao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ========== SELECTOR ========== -->
+  <section id="selector">
+    <header class="sel-header">
+      <p class="sel-eyebrow">Reporte de planta · Chincha · 2025–2026</p>
+      <h1 class="sel-title">Recuperación de merma<br><strong>en tres etapas del proceso</strong></h1>
+      <p class="sel-sub">Tres proyectos de reducción de pérdidas. Selecciona uno para recorrer sus datos en formato presentación con avance automático.</p>
+    </header>
+    <div class="cards" id="cardsWrap"></div>
+    <p class="sel-footer">Datos extraídos de los registros de planta · Sin valores inventados</p>
+  </section>
+
+  <!-- ========== PRESENTATION ========== -->
+  <section id="presentation">
+    <div class="pres-top">
+      <button class="btn-icon" onclick="App.backToSelector()" aria-label="Volver" id="btnBack">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      </button>
+      <div class="pres-meta">
+        <div class="pres-tag" id="pTag">—</div>
+        <div class="pres-name" id="pName">—</div>
+      </div>
+      <button class="btn-icon" id="pPlayBtn" onclick="App.toggleAutoplay()" aria-label="Pausar / Reproducir">
+        <span id="pPlayIco"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></span>
+      </button>
+    </div>
+    <div class="pres-progress" id="pSegs"></div>
+
+    <div class="pres-stage">
+      <button class="nav-btn prev" onclick="App.prevSlide()" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button class="nav-btn next" onclick="App.nextSlide()" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+      <div id="stage"></div>
+    </div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
