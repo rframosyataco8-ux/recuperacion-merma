@@ -1,4 +1,4 @@
-/* App controller - presentation logic */
+/* App controller — presentation logic */
 
 const App = (() => {
   let currentKey = null;
@@ -16,11 +16,21 @@ const App = (() => {
   const playIco = document.getElementById('pPlayIco');
 
   const DURATIONS = {
-    hero: 4500, kpis: 7000, chart: 6500, twocol: 5800, triad: 6200, table: 6800, evidence: 6000, conclusion: 999999
+    hero: 4500,
+    kpis: 5500,
+    chart: 6500,
+    twocol: 5800,
+    triad: 6200,
+    table: 6800,
+    evidence: 6000,
+    conclusion: 999999
   };
 
   function fmt(v, dec, prefix) {
-    const s = Number(v).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+    const s = Number(v).toLocaleString('en-US', {
+      minimumFractionDigits: dec,
+      maximumFractionDigits: dec
+    });
     return (prefix || '') + s;
   }
 
@@ -126,7 +136,7 @@ const App = (() => {
       const elapsed = now - segStart;
       segRemaining = Math.max(0, duration - elapsed);
       if (activeFill) activeFill.style.width = Math.min(100, (elapsed / duration) * 100) + '%';
-      if (elapsed >= duration) { if (autoplay) nextSlide(true); return; }
+      if (elapsed >= duration) { if (autoplay) nextSlide(); return; }
       segTimer = requestAnimationFrame(frame);
     }
     segTimer = requestAnimationFrame(frame);
@@ -251,11 +261,15 @@ const App = (() => {
 
   function tplEvidence(s) {
     const src = (typeof EVIDENCE !== 'undefined' && EVIDENCE[s.imageKey]) ? EVIDENCE[s.imageKey] : '';
+    const src2 = (s.imageKey2 && typeof EVIDENCE !== 'undefined' && EVIDENCE[s.imageKey2]) ? EVIDENCE[s.imageKey2] : '';
+    const imgs = [];
+    if (src) imgs.push(`<img class="evidence-img" src="${src}" alt="${s.caption || 'Evidencia'}" />`);
+    if (src2) imgs.push(`<img class="evidence-img" src="${src2}" alt="${s.caption || 'Evidencia 2'}" />`);
     return `<div class="kicker reveal" style="transition-delay:.03s">${s.kicker}</div>
       <h2 class="slide-h reveal" style="transition-delay:.1s">${s.title}</h2>
       <p class="slide-p reveal" style="transition-delay:.18s">${s.sub || ''}</p>
-      <div class="evidence-box reveal" style="transition-delay:.28s">
-        ${src ? `<img class="evidence-img" src="${src}" alt="${s.caption || 'Evidencia'}" />` : '<p class="slide-p">Sin imagen de evidencia disponible.</p>'}
+      <div class="evidence-box ${src2 ? 'evidence-box-multi' : ''} reveal" style="transition-delay:.28s">
+        ${imgs.length ? imgs.join('') : '<p class="slide-p">Sin imagen de evidencia disponible.</p>'}
         ${s.caption ? `<p class="evidence-caption">${s.caption}</p>` : ''}
       </div>`;
   }
